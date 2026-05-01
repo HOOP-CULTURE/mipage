@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOOP CULTURE</title>
-<meta name="description" content="HOOP CULTURE: sneakers y streetwear inspirados en el básquet. Explora colección, atajos rápidos y compra directa por WhatsApp.">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -178,61 +176,6 @@ box-shadow:0 0 15px #25D366;
 }
 
 
-.hero-content .ghost{
-background:transparent;
-border:1px solid #00ff88;
-color:#00ff88;
-margin-left:10px;
-}
-
-.highlights{
-padding:80px 60px 20px;
-}
-
-.highlights h2{
-font-weight:900;
-margin-bottom:10px;
-}
-
-.subtitle{
-color:#cfcfcf;
-margin-bottom:20px;
-}
-
-.quick-links{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-margin-bottom:25px;
-}
-
-.quick-links a{
-text-decoration:none;
-color:#0a0a0a;
-background:#00ff88;
-padding:10px 16px;
-border-radius:999px;
-font-weight:700;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.features div{
-background:#101010;
-border:1px solid #1d1d1d;
-border-radius:12px;
-padding:16px;
-}
-
-.features p{
-color:#b0b0b0;
-margin-top:8px;
-}
-
 @media (max-width: 768px){
 nav{
 padding:16px 20px;
@@ -258,14 +201,6 @@ font-size:14px;
 padding:80px 20px;
 }
 
-.highlights{
-padding:70px 20px 10px;
-}
-
-.hero-content .ghost{
-margin-left:0;
-margin-top:10px;
-}
 }
 
 /* ANIMATION */
@@ -285,7 +220,7 @@ to{opacity:1;transform:translateY(0)}
 <div>
 <a href="#">Inicio</a>
 <a href="#productos">Colección</a>
-<a href="#destacados">Atajos</a>
+
 <a href="#contacto">Contacto</a>
 </div>
 </nav>
@@ -300,24 +235,7 @@ to{opacity:1;transform:translateY(0)}
 <h2>DE LA CANCHA A LA CALLE</h2>
 <p>Estilo. Juego. Cultura.</p>
 <button onclick="scrollToProducts()">Explorar</button>
-<button class="ghost" onclick="scrollToHighlights()">Ver atajos</button>
-</div>
-</section>
 
-
-<!-- DESTACADOS -->
-<section id="destacados" class="highlights">
-<h2>ATAJOS RÁPIDOS</h2>
-<p class="subtitle">Encuentra lo que buscas en segundos y compra sin vueltas.</p>
-<div class="quick-links">
-<a href="#productos">🔥 Ver colección</a>
-<a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">💬 Comprar por WhatsApp</a>
-<a href="#contacto">📍 Ir al contacto</a>
-</div>
-<div class="features">
-<div><h3>Envío express</h3><p>Despachamos tus pedidos en 24 horas.</p></div>
-<div><h3>Pagos fáciles</h3><p>Yape, Plin y transferencia bancaria.</p></div>
-<div><h3>Drops semanales</h3><p>Nuevos pares y streetwear cada semana.</p></div>
 </div>
 </section>
 
@@ -376,10 +294,7 @@ function scrollToProducts(){
 document.getElementById("productos").scrollIntoView({behavior:"smooth"});
 }
 
-function scrollToHighlights(){
-document.getElementById("destacados").scrollIntoView({behavior:"smooth"});
-}
-
+<
 function buy(name,price){
 let msg = `Hola, quiero comprar ${name} - S/ ${price}. Métodos de pago: Yape, Plin o transferencia.`;
 window.open(`https://wa.me/51999999999?text=${encodeURIComponent(msg)}`);
