@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lakers Sneaker Store - Oficial</title>
+    <style>
+        /* VARIABLES DE MARCA LAKERS */
+        :root {
+            --lakers-purple: #552583; /* Púrpura oficial [3] */
+            --lakers-gold: #FDB927;   /* Oro oficial [3] */
+            --lakers-black: #000000;
+        }
+
+        /* ESTÉTICA BASE (CODEA APP) */
+        body { margin: 0; font-family: sans-serif; }
+
+        /* 1. Menú de navegación centrado con logo al medio [1, 4] */
+        header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            background: var(--lakers-black);
+            color: white;
+        }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .logo img { width: 80px; }
+
+        /* 2. Fondo gradiente radial en la portada [2, 4] */
+        .hero {
+            background: radial-gradient(circle, var(--lakers-purple) 0%, var(--lakers-black) 100%);
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--lakers-gold);
+            text-align: center;
+        }
+
+        /* 3. Animación Keyframes (Movimiento vertical 4s) [4] */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-25px); }
+            100% { transform: translateY(0px); }
+        }
+        .animated-shoe {
+            width: 450px;
+            animation: float 4s ease-in-out infinite; /* Movimiento lento EaseInOut [4] */
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+        }
+
+        /* ADICIONES DE UX Y ECOMMERCE (SIN CAMBIAR LA BASE) */
+        .product-card {
+            max-width: 300px;
+            margin: 20px auto;
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+        }
+        /* Efecto zoom al pasar el mouse por la imagen del producto [5, 6] */
+        .product-card img { width: 100%; transition: transform 0.3s; }
+        .product-card img:hover { transform: scale(1.1); }
+
+        /* Información de transparencia: precio con impuestos y disponibilidad [5, 7] */
+        .price { font-size: 1.5em; color: var(--lakers-purple); font-weight: bold; }
+        .tax-label { font-size: 0.8em; color: #666; display: block; }
+        .stock-status { color: green; font-size: 0.9em; margin-bottom: 10px; }
+
+        /* Botones de pago optimizados (Yape/Plin) para evitar fricción móvil [8] */
+        .payment-btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            color: white;
+        }
+        .yape { background-color: #742e8a; }
+        .plin { background-color: #00d2b5; }
+
+        .btn-add {
+            background: var(--lakers-gold);
+            color: var(--lakers-black);
+            padding: 12px 25px;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Estructura Original del Menú [4] -->
+    <header>
+        <nav>
+            <a href="#">HOMBRE</a>
+            <a href="#">MUJER</a>
+        </nav>
+        <div class="logo">
+            <img src="lakers-logo.png" alt="Lakers">
+        </div>
+        <nav>
+            <a href="#">REEDICIONES</a>
+            <a href="#">CONTACTO</a>
+        </nav>
+    </header>
+
+    <!-- Portada con Animación y Gradiente Original [1, 2] -->
+    <section class="hero">
+        <div class="hero-info">
+            <h1 style="font-size: 3em;">EDICIÓN SHOWTIME</h1>
+            <p>El legado de los 17 campeonatos en tus pies [9].</p>
+        </div>
+        <img src="zapatilla-lakers.png" alt="Sneaker" class="animated-shoe">
+    </section>
+
+    <!-- Sección de Producto con Mejoras de UX (Información Clara) [7, 10] -->
+    <section style="padding: 50px;">
+        <div class="product-card">
+            <img src="shoe-item.jpg" alt="Lakers Pro">
+            <h3>Sneaker Heritage Purple & Gold</h3>
+            <p class="stock-status">● En stock: Listo para envío [5]</p>
+            <p class="price">$129.90</p>
+            <span class="tax-label">Precio con impuestos incluidos [7]</span>
+            <br>
+            <button class="btn-add">AÑADIR AL CARRITO</button>
+            
+            <!-- Integración de pagos locales sugerida por Traza Virtual [8] -->
+            <div style="margin-top: 20px;">
+                <p style="font-size: 0.8em;">Compra rápida con:</p>
+                <button class="payment-btn yape">YAPE</button>
+                <button class="payment-btn plin">PLIN</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
