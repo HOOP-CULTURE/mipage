@@ -14,7 +14,7 @@
     .nav{display:flex;justify-content:space-between;align-items:center}
     .brand{font-weight:900;letter-spacing:1px}
     .links a{color:#fff;text-decoration:none;margin-left:16px}
-    .hero{padding:72px 0 44px;background:linear-gradient(145deg,#151515,#090909)}
+    .hero{padding:90px 0 56px;background:radial-gradient(circle at 20% 20%,#1f1f1f,#090909)}
     h1{font-size:clamp(2rem,6vw,4rem);font-weight:900;text-transform:uppercase}
     .hero p{max-width:700px;color:var(--muted);margin:12px 0 20px}
     .btn{display:inline-block;background:var(--accent);color:#111;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:none;cursor:pointer}
@@ -22,7 +22,7 @@
     h2{font-size:1.8rem;margin-bottom:8px;text-transform:uppercase}
     .subtitle{color:var(--muted);margin-bottom:16px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-    .card{background:var(--panel);border:1px solid #262626;border-radius:12px;overflow:hidden}
+    .card{background:var(--panel);border:1px solid #262626;border-radius:12px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#3a3a3a}
     .card img{width:100%;height:220px;object-fit:cover}
     .card .body{padding:12px}
     .price{color:var(--accent);font-weight:700;margin:8px 0}
@@ -36,15 +36,16 @@
 <header>
   <div class="container nav">
     <div class="brand">HOOP CULTURE</div>
-    <nav class="links"><a href="#productos">Productos</a><a href="#pagos">Pagos</a></nav>
+    <nav class="links"><a href="#productos">Productos</a><a href="#beneficios">Beneficios</a><a href="#pagos">Pagos</a></nav>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="container">
+      <span style="display:inline-block;color:#111;background:#78ff00;padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:10px;">NUEVA TEMPORADA</span>
       <h1>De la cancha a la calle</h1>
-      <p>Rediseño limpio y estable desde cero. Sneakers de básquet con estilo urbano y compra rápida por WhatsApp.</p>
+      <p>Ahora con mejor diseño, más orden y compra en 1 clic por WhatsApp. Encuentra tus sneakers favoritos en segundos.</p>
       <a class="btn" href="#productos">Ver colección</a>
     </div>
   </section>
@@ -52,7 +53,7 @@
   <section id="productos">
     <div class="container">
       <h2>Colección destacada</h2>
-      <p class="subtitle">Modelos más pedidos.</p>
+      <p class="subtitle">Top ventas de esta semana.</p>
       <div class="grid">
         <article class="card"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="LeBron 23"><div class="body"><h3>LeBron 23</h3><p class="price">S/ 450</p><button class="btn" onclick="buy('LeBron 23',450)">Comprar</button></div></article>
         <article class="card"><img src="https://images.unsplash.com/photo-1528701800489-20be3c92f0bb" alt="Urban Street"><div class="body"><h3>Urban Street</h3><p class="price">S/ 220</p><button class="btn" onclick="buy('Urban Street',220)">Comprar</button></div></article>
@@ -61,17 +62,23 @@
     </div>
   </section>
 
+  <section id="beneficios">
+    <div class="container">
+      <h2>Beneficios</h2>
+      <p class="subtitle">Todo pensado para que compres rápido y seguro.</p>
+      <div class="grid">
+        <article class="card"><div class="body"><h3>⚡ Envío rápido</h3><p class="subtitle">Despacho en 24h en ciudades principales.</p></div></article>
+        <article class="card"><div class="body"><h3>💬 Soporte directo</h3><p class="subtitle">Atención en tiempo real por WhatsApp.</p></div></article>
+        <article class="card"><div class="body"><h3>🛡️ Compra segura</h3><p class="subtitle">Pagos verificados con métodos conocidos.</p></div></article>
+      </div>
+    </div>
+  </section>
+
   <section id="pagos">
     <div class="container">
       <h2>Métodos de pago</h2>
-      <p class="subtitle">Elige el que prefieras.</p>
-      <div class="pay">
-        <span class="chip">Visa</span>
-        <span class="chip">Mastercard</span>
-        <span class="chip">Yape</span>
-        <span class="chip">Plin</span>
-        <span class="chip">Transferencia</span>
-      </div>
+      <p class="subtitle">Opciones disponibles:</p>
+      <div class="pay"><span class="chip">Visa</span><span class="chip">Mastercard</span><span class="chip">Yape</span><span class="chip">Plin</span><span class="chip">Transferencia</span></div>
     </div>
   </section>
 </main>
