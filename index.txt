@@ -4,97 +4,38 @@
 <meta charset="UTF-8">
 <title>HOOP CULTURE</title>
 
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
-body{background:#0a0a0a;color:white}
-
-/* NAV */
-nav{
-position:fixed;width:100%;
-display:flex;justify-content:space-between;
-padding:20px 60px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-}
-nav h1{font-weight:800}
-
-/* HERO */
-.hero{
-height:100vh;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
-.hero video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-filter:brightness(0.4);
-}
-.hero h2{font-size:60px}
-
-/* PRODUCTS */
-.products{padding:100px 60px}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-.card{
-background:#111;
-border-radius:15px;
-overflow:hidden;
-text-align:center;
-}
-.card img{width:100%}
-.price{color:#00ff88}
-
-/* BUTTON */
-button{
-margin:10px;
-padding:10px;
-background:#00ff88;
-border:none;
-cursor:pointer;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-color:white;
-text-decoration:none;
-}
-</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <h1>HOOP CULTURE</h1>
+<div>
+<a href="#">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#contacto">Contacto</a>
+</div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <video autoplay muted loop>
 <source src="https://cdn.coverr.co/videos/coverr-basketball-player-dribbling-5173/1080p.mp4">
 </video>
-<div>
+
+<div class="hero-content">
 <h2>DE LA CANCHA A LA CALLE</h2>
+<p>Estilo. Juego. Cultura.</p>
+<button onclick="scrollToProducts()">Explorar</button>
 </div>
 </section>
 
-<section class="products">
-<h2>PRODUCTOS</h2>
+<!-- PRODUCTOS -->
+<section id="productos" class="products">
+<h2>COLECCIÓN</h2>
 
 <div class="grid">
 
@@ -112,17 +53,35 @@ text-decoration:none;
 <button onclick="buy('Urban Street',220)">Comprar</button>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a">
+<h3>Hoop Pro</h3>
+<p class="price">S/ 300</p>
+<button onclick="buy('Hoop Pro',300)">Comprar</button>
 </div>
 
-<p style="text-align:center; margin-top:20px; color:#aaa;">
+</div>
+
+<p class="payments">
 Aceptamos pagos por Yape, Plin y transferencia bancaria.
 </p>
 
 </section>
 
+<!-- FOOTER -->
+<footer id="contacto">
+<p>© 2026 HOOP CULTURE</p>
+<p>Contacto vía WhatsApp</p>
+</footer>
+
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51999999999">💬</a>
 
 <script>
+function scrollToProducts(){
+document.getElementById("productos").scrollIntoView({behavior:"smooth"});
+}
+
 function buy(name,price){
 let msg = `Hola, quiero comprar ${name} - S/ ${price}. Métodos de pago: Yape, Plin o transferencia.`;
 window.open(`https://wa.me/51999999999?text=${msg}`);
