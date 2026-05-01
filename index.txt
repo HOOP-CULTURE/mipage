@@ -2,10 +2,187 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOOP CULTURE</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat', sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h1{
+font-weight:900;
+letter-spacing:2px;
+}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00ff88;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+filter:brightness(0.35);
+}
+
+.hero-content h2{
+font-size:70px;
+font-weight:900;
+animation:fade 1.5s ease;
+}
+
+.hero-content p{
+margin-top:10px;
+opacity:0.8;
+}
+
+.hero-content button{
+margin-top:20px;
+padding:14px 35px;
+background:#00ff88;
+border:none;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.hero-content button:hover{
+transform:scale(1.1);
+}
+
+/* PRODUCTS */
+.products{
+padding:100px 60px;
+}
+
+.products h2{
+margin-bottom:30px;
+font-weight:900;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border-radius:15px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.info{
+padding:15px;
+}
+
+.price{
+color:#00ff88;
+margin:10px 0;
+}
+
+button{
+padding:10px 20px;
+background:#00ff88;
+border:none;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.payments{
+text-align:center;
+margin-top:40px;
+color:#aaa;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:black;
+margin-top:50px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+color:white;
+text-decoration:none;
+font-size:20px;
+box-shadow:0 0 15px #25D366;
+}
+
+/* ANIMATION */
+@keyframes fade{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+
 </head>
 
 <body>
@@ -15,7 +192,7 @@
 <h1>HOOP CULTURE</h1>
 <div>
 <a href="#">Inicio</a>
-<a href="#productos">Productos</a>
+<a href="#productos">Colección</a>
 <a href="#contacto">Contacto</a>
 </div>
 </nav>
@@ -35,29 +212,35 @@
 
 <!-- PRODUCTOS -->
 <section id="productos" class="products">
-<h2>COLECCIÓN</h2>
+<h2>COLECCIÓN DESTACADA</h2>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+<div class="info">
 <h3>LeBron 23</h3>
 <p class="price">S/ 450</p>
 <button onclick="buy('LeBron 23',450)">Comprar</button>
 </div>
+</div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1528701800489-20be3c92f0bb">
+<div class="info">
 <h3>Urban Street</h3>
 <p class="price">S/ 220</p>
 <button onclick="buy('Urban Street',220)">Comprar</button>
 </div>
+</div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a">
+<div class="info">
 <h3>Hoop Pro</h3>
 <p class="price">S/ 300</p>
 <button onclick="buy('Hoop Pro',300)">Comprar</button>
+</div>
 </div>
 
 </div>
@@ -71,7 +254,7 @@ Aceptamos pagos por Yape, Plin y transferencia bancaria.
 <!-- FOOTER -->
 <footer id="contacto">
 <p>© 2026 HOOP CULTURE</p>
-<p>Contacto vía WhatsApp</p>
+<p>Compra directa vía WhatsApp</p>
 </footer>
 
 <!-- WHATSAPP -->
