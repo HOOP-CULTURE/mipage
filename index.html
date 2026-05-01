@@ -1,110 +1,89 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HOOP CULTURE</title>
-  <meta name="description" content="HOOP CULTURE: sneakers de básquet y streetwear. Compra directa por WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <meta name="description" content="Tienda de sneakers y streetwear de básquet. Compra fácil por WhatsApp.">
   <style>
-    :root{--bg:#080808;--fg:#fff;--muted:#b9b9b9;--accent:#7CFF00}
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Montserrat,sans-serif}
-    body{background:var(--bg);color:var(--fg)}
-    a{text-decoration:none;color:inherit}
-    .wrap{width:min(1120px,92%);margin:0 auto}
-    nav{position:fixed;inset:0 0 auto 0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);z-index:1000}
-    nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-    .brand{font-weight:900;letter-spacing:2px}
-    .menu{display:flex;gap:18px;font-weight:600}
-    .hero{position:relative;min-height:100vh;display:grid;align-items:center}
-    .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.35);z-index:-2}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.35));z-index:-1}
-    .hero h1{font-size:clamp(2.2rem,6vw,4.8rem);font-weight:900;text-transform:uppercase;line-height:1}
-    .hero p{margin-top:14px;color:#ddd;max-width:620px}
-    .actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
-    button{border:none;border-radius:999px;padding:12px 20px;font-weight:800;cursor:pointer}
-    .primary{background:var(--accent);color:#111}
-    .ghost{background:transparent;color:#fff;border:1px solid #666}
-    section{padding:80px 0}
-    h2{font-size:2rem;font-weight:900;margin-bottom:8px;text-transform:uppercase}
-    .sub{color:var(--muted);margin-bottom:22px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-    .card{background:#111;border:1px solid #242424;border-radius:14px;overflow:hidden}
-    .card img{width:100%;height:250px;object-fit:cover}
-    .info{padding:14px}
-    .price{margin:8px 0 12px;color:var(--accent);font-weight:800}
-    .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .benefit{background:#101010;border:1px solid #232323;border-radius:12px;padding:14px}
-    .benefit p{margin-top:6px;color:var(--muted);font-size:.92rem}
-    .payments-box{background:#0f0f0f;border:1px solid #232323;border-radius:14px;padding:22px;text-align:center}
-    .logos{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-    .logos img{height:40px;background:#fff;border-radius:8px;padding:6px 10px}
-    footer{padding:26px 0;text-align:center;color:#aaa;background:#000}
-    .wa{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:26px;box-shadow:0 0 16px #25D366}
-    @media (max-width:760px){.menu{font-size:.9rem;gap:10px}.hero{padding-top:70px}}
+    :root{--bg:#0b0b0b;--panel:#141414;--text:#fff;--muted:#b7b7b7;--accent:#78ff00}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.4}
+    .container{width:min(1100px,92%);margin:auto}
+    header{padding:18px 0;border-bottom:1px solid #232323;position:sticky;top:0;background:#0b0b0bf0;backdrop-filter:blur(6px)}
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:900;letter-spacing:1px}
+    .links a{color:#fff;text-decoration:none;margin-left:16px}
+    .hero{padding:72px 0 44px;background:linear-gradient(145deg,#151515,#090909)}
+    h1{font-size:clamp(2rem,6vw,4rem);font-weight:900;text-transform:uppercase}
+    .hero p{max-width:700px;color:var(--muted);margin:12px 0 20px}
+    .btn{display:inline-block;background:var(--accent);color:#111;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+    section{padding:56px 0}
+    h2{font-size:1.8rem;margin-bottom:8px;text-transform:uppercase}
+    .subtitle{color:var(--muted);margin-bottom:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+    .card{background:var(--panel);border:1px solid #262626;border-radius:12px;overflow:hidden}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card .body{padding:12px}
+    .price{color:var(--accent);font-weight:700;margin:8px 0}
+    .pay{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{padding:8px 12px;border-radius:999px;background:#1b1b1b;border:1px solid #2e2e2e;color:#ddd}
+    footer{padding:28px 0;text-align:center;color:#9e9e9e;border-top:1px solid #232323}
+    .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;text-decoration:none;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:24px}
   </style>
 </head>
 <body>
-  <nav>
-    <div class="wrap">
-      <div class="brand">HOOP CULTURE</div>
-      <div class="menu"><a href="#inicio">Inicio</a><a href="#productos">Colección</a><a href="#pagos">Pagos</a></div>
-    </div>
-  </nav>
+<header>
+  <div class="container nav">
+    <div class="brand">HOOP CULTURE</div>
+    <nav class="links"><a href="#productos">Productos</a><a href="#pagos">Pagos</a></nav>
+  </div>
+</header>
 
-  <header class="hero" id="inicio">
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-basketball-player-dribbling-5173/1080p.mp4" type="video/mp4">
-    </video>
-    <div class="wrap">
-      <h1>De la cancha<br>a la calle</h1>
-      <p>Diseño premium y rendimiento real. Elige tu par y compra por WhatsApp en segundos.</p>
-      <div class="actions">
-        <button class="primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver colección</button>
-        <button class="ghost" onclick="openWhatsApp()">Comprar ahora</button>
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>De la cancha a la calle</h1>
+      <p>Rediseño limpio y estable desde cero. Sneakers de básquet con estilo urbano y compra rápida por WhatsApp.</p>
+      <a class="btn" href="#productos">Ver colección</a>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="container">
+      <h2>Colección destacada</h2>
+      <p class="subtitle">Modelos más pedidos.</p>
+      <div class="grid">
+        <article class="card"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="LeBron 23"><div class="body"><h3>LeBron 23</h3><p class="price">S/ 450</p><button class="btn" onclick="buy('LeBron 23',450)">Comprar</button></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1528701800489-20be3c92f0bb" alt="Urban Street"><div class="body"><h3>Urban Street</h3><p class="price">S/ 220</p><button class="btn" onclick="buy('Urban Street',220)">Comprar</button></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Hoop Pro"><div class="body"><h3>Hoop Pro</h3><p class="price">S/ 300</p><button class="btn" onclick="buy('Hoop Pro',300)">Comprar</button></div></article>
       </div>
     </div>
-  </header>
+  </section>
 
-  <section id="productos"><div class="wrap">
-    <h2>Colección destacada</h2><p class="sub">Modelos top para basket y streetwear.</p>
-    <div class="grid">
-      <article class="card"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="LeBron 23"><div class="info"><h3>LeBron 23</h3><p class="price">S/ 450</p><button class="primary" onclick="buy('LeBron 23',450)">Comprar</button></div></article>
-      <article class="card"><img src="https://images.unsplash.com/photo-1528701800489-20be3c92f0bb" alt="Urban Street"><div class="info"><h3>Urban Street</h3><p class="price">S/ 220</p><button class="primary" onclick="buy('Urban Street',220)">Comprar</button></div></article>
-      <article class="card"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Hoop Pro"><div class="info"><h3>Hoop Pro</h3><p class="price">S/ 300</p><button class="primary" onclick="buy('Hoop Pro',300)">Comprar</button></div></article>
+  <section id="pagos">
+    <div class="container">
+      <h2>Métodos de pago</h2>
+      <p class="subtitle">Elige el que prefieras.</p>
+      <div class="pay">
+        <span class="chip">Visa</span>
+        <span class="chip">Mastercard</span>
+        <span class="chip">Yape</span>
+        <span class="chip">Plin</span>
+        <span class="chip">Transferencia</span>
+      </div>
     </div>
-  </div></section>
+  </section>
+</main>
 
-  <section><div class="wrap">
-    <h2>Beneficios</h2><p class="sub">Compra simple y segura.</p>
-    <div class="benefits">
-      <div class="benefit"><strong>⚡ Envío rápido</strong><p>Despacho en 24h.</p></div>
-      <div class="benefit"><strong>💳 Pago flexible</strong><p>Yape, Plin y tarjetas.</p></div>
-      <div class="benefit"><strong>🛡️ Soporte directo</strong><p>Atención por WhatsApp.</p></div>
-    </div>
-  </div></section>
+<footer>© 2026 HOOP CULTURE · Compra directa por WhatsApp</footer>
+<a class="wa" href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">💬</a>
 
-  <section id="pagos"><div class="wrap payments-box">
-    <h2>Métodos de pago</h2><p class="sub">Estas son las opciones disponibles:</p>
-    <div class="logos">
-      <img alt="Visa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Visa.svg/2560px-Visa.svg.png" />
-      <img alt="Mastercard" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/2560px-Mastercard-logo.svg.png" />
-      <img alt="Yape" src="https://seeklogo.com/images/Y/yape-logo-3E473EE8F1-seeklogo.com.png" />
-      <img alt="Plin" src="https://seeklogo.com/images/P/plin-logo-9670C5A3A4-seeklogo.com.png" />
-    </div>
-  </div></section>
-
-  <footer>© 2026 HOOP CULTURE · Compra directa vía WhatsApp</footer>
-  <a class="wa" href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">💬</a>
-
-  <script>
-    function openWhatsApp(){ window.open('https://wa.me/51999999999','_blank'); }
-    function buy(name,price){
-      const text = encodeURIComponent(`Hola, quiero comprar ${name} - S/ ${price}.`);
-      window.open(`https://wa.me/51999999999?text=${text}`,'_blank');
-    }
-  </script>
+<script>
+  function buy(name, price) {
+    const msg = encodeURIComponent(`Hola, quiero comprar ${name} - S/ ${price}.`);
+    window.open(`https://wa.me/51999999999?text=${msg}`, '_blank');
+  }
+</script>
 </body>
 </html>
