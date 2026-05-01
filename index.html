@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakers Sneaker Store - Heritage Collection</title>
+    <style>
+        :root {
+            --lakers-purple: #552583;
+            --lakers-gold: #FDB927;
+            --lakers-black: #000000;
+            --white: #ffffff;
+            --gray-bg: #f4f4f4;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--lakers-black); }
+
+        .main-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 5%;
+            background: var(--white);
+            border-bottom: 2px solid var(--lakers-purple);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .logo img { height: 50px; width: 50px; object-fit: contain; }
+        .nav-links a { text-decoration: none; color: var(--lakers-purple); font-weight: bold; text-transform: uppercase; }
+
+        .hero {
+            background: radial-gradient(circle, var(--lakers-purple) 0%, var(--lakers-black) 100%);
+            color: var(--lakers-gold);
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        .hero-image {
+            max-width: 300px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            animation: float 4s ease-in-out infinite;
+            margin-top: 1rem;
+            border-radius: 14px;
+        }
+
+        .product-section { padding: 3rem 5%; background: var(--gray-bg); }
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 420px;
+            margin: auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .product-card h3 { color: var(--lakers-purple); font-size: 1.5rem; }
+        .price { font-size: 1.25rem; font-weight: bold; color: #d32f2f; margin: 0.5rem 0; }
+        .tax-info { font-size: 0.85rem; color: #666; font-weight: normal; }
+        .stock-status { color: #2e7d32; font-weight: bold; margin-bottom: 1rem; }
+
+        .payment-methods { margin-top: 1.5rem; }
+        .btn-pay {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            transition: 0.3s;
+        }
+        .yape { background: #00d2b5; color: white; }
+        .plin { background: #007aff; color: white; }
+        .btn-cart { background: var(--lakers-gold); color: var(--lakers-black); font-size: 1rem; margin-top: 1rem; }
+
+        @media (min-width: 768px) {
+            .hero { flex-direction: row; justify-content: space-around; text-align: left; }
+            .hero h1 { font-size: 4rem; }
+            .hero-image { max-width: 420px; margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <ul class="nav-links">
+            <li><a href="#">Hombre</a></li>
+            <li><a href="#">Mujer</a></li>
+        </ul>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Los_Angeles_Lakers_logo.svg" alt="Lakers Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Drops</a></li>
+            <li><a href="#">Cuenta</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>SHOWTIME <br>HERITAGE</h1>
+            <p>Edición Limitada 2026</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=900&q=80" alt="Zapatilla Lakers" class="hero-image">
+    </section>
+
+    <section class="product-section">
+        <article class="product-card">
+            <h3>Sneaker Purple & Gold Pro</h3>
+            <p class="price">$149.00 <span class="tax-info">(Incluye IGV/Tasas)</span></p>
+            <p class="stock-status">Disponible para envío inmediato</p>
+
+            <div class="payment-methods">
+                <button class="btn-pay yape">Pagar con Yape</button>
+                <button class="btn-pay plin">Pagar con Plin</button>
+                <button class="btn-pay btn-cart">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+
+</body>
+</html>
