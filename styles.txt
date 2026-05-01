@@ -1,0 +1,138 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat', sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h1{
+font-weight:800;
+letter-spacing:2px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+filter:brightness(0.4);
+}
+
+.hero h2{
+font-size:60px;
+font-weight:800;
+animation:fade 2s ease;
+}
+
+/* PRODUCTS */
+.products{
+padding:100px 60px;
+}
+
+.products h2{
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card h3{
+padding:10px;
+}
+
+.price{
+color:#00ff88;
+}
+
+button{
+margin:10px;
+padding:10px;
+background:#00ff88;
+border:none;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:black;
+margin-top:50px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+color:white;
+font-size:20px;
+box-shadow:0 0 10px #25D366;
+}
+
+/* ANIMATION */
+@keyframes fade{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
