@@ -1,139 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Lakers Sneaker Store - Oficial</title>
-    <style>
-        /* VARIABLES DE MARCA LAKERS */
-        :root {
-            --lakers-purple: #552583; /* Púrpura oficial [3] */
-            --lakers-gold: #FDB927;   /* Oro oficial [3] */
-            --lakers-black: #000000;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOOP CULTURE</title>
 
-        /* ESTÉTICA BASE (CODEA APP) */
-        body { margin: 0; font-family: sans-serif; }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 
-        /* 1. Menú de navegación centrado con logo al medio [1, 4] */
-        header {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px;
-            background: var(--lakers-black);
-            color: white;
-        }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .logo img { width: 80px; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+:root{--bg:#0a0a0a;--panel:#111;--panel2:#171717;--text:#fff;--muted:#b9b9b9;--accent:#00ff88}
+body{background:var(--bg);color:var(--text);line-height:1.45}
 
-        /* 2. Fondo gradiente radial en la portada [2, 4] */
-        .hero {
-            background: radial-gradient(circle, var(--lakers-purple) 0%, var(--lakers-black) 100%);
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--lakers-gold);
-            text-align: center;
-        }
+.container{width:min(1180px,92%);margin:0 auto}
+.section{padding:78px 0}
+.section-title{font-size:clamp(28px,4vw,40px);margin-bottom:24px;letter-spacing:.5px}
 
-        /* 3. Animación Keyframes (Movimiento vertical 4s) [4] */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-25px); }
-            100% { transform: translateY(0px); }
-        }
-        .animated-shoe {
-            width: 450px;
-            animation: float 4s ease-in-out infinite; /* Movimiento lento EaseInOut [4] */
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
-        }
+/* NAV */
+nav{
+position:fixed;top:0;left:0;width:100%;
+display:flex;justify-content:space-between;align-items:center;
+padding:16px 4%;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(8px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+nav .logo{font-weight:800;letter-spacing:1px}
+nav .links a{color:white;margin-left:20px;text-decoration:none;font-weight:700;font-size:14px}
+nav .links a:hover{color:var(--accent)}
 
-        /* ADICIONES DE UX Y ECOMMERCE (SIN CAMBIAR LA BASE) */
-        .product-card {
-            max-width: 300px;
-            margin: 20px auto;
-            border: 1px solid #eee;
-            padding: 15px;
-            text-align: center;
-        }
-        /* Efecto zoom al pasar el mouse por la imagen del producto [5, 6] */
-        .product-card img { width: 100%; transition: transform 0.3s; }
-        .product-card img:hover { transform: scale(1.1); }
+/* HERO */
+.hero{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070') center/cover;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+}
+.hero h1{
+font-size:clamp(44px,9vw,86px);
+font-weight:800;
+letter-spacing:3px;
+}
+.hero p{margin-top:12px;opacity:.9;color:#dcdcdc;max-width:760px}
+.hero .cta{margin-top:24px;display:inline-block;background:var(--accent);color:#000;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:800}
 
-        /* Información de transparencia: precio con impuestos y disponibilidad [5, 7] */
-        .price { font-size: 1.5em; color: var(--lakers-purple); font-weight: bold; }
-        .tax-label { font-size: 0.8em; color: #666; display: block; }
-        .stock-status { color: green; font-size: 0.9em; margin-bottom: 10px; }
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
 
-        /* Botones de pago optimizados (Yape/Plin) para evitar fricción móvil [8] */
-        .payment-btn {
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 5px;
-            color: white;
-        }
-        .yape { background-color: #742e8a; }
-        .plin { background-color: #00d2b5; }
+/* CARD */
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border-radius:14px;overflow:hidden;transition:.25s;border:1px solid rgba(255,255,255,.06)}
+.card:hover{transform:translateY(-8px);box-shadow:0 12px 26px rgba(0,0,0,.45)}
+.card img{width:100%;height:260px;object-fit:cover;background:#202020}
+.info{padding:15px}
+.info h3{font-size:20px}
+.price{color:var(--accent);font-weight:bold;margin-top:8px}
+.buy{margin-top:12px;padding:10px;background:var(--accent);color:#000;text-align:center;cursor:pointer;font-weight:bold;border-radius:8px}
 
-        .btn-add {
-            background: var(--lakers-gold);
-            color: var(--lakers-black);
-            padding: 12px 25px;
-            border: none;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-    </style>
+/* BENEFICIOS */
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;text-align:center}
+.benefit{background:var(--panel);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,.08);font-weight:700}
+
+/* PAGOS */
+.pagos{text-align:center;padding:30px 0 10px}
+.pagos h2{margin-bottom:10px}
+.pagos p{color:var(--muted);margin-bottom:10px}
+.pagos img{width:130px;margin:12px;background:white;padding:10px;border-radius:10px}
+
+/* FOOTER */
+footer{text-align:center;padding:30px;background:#000;color:#a6a6a6;margin-top:40px}
+
+@media (max-width:800px){
+  nav{padding:14px 16px;flex-direction:column;align-items:flex-start;gap:10px}
+  nav .links a{margin-left:0;margin-right:14px}
+}
+</style>
+
 </head>
+
 <body>
 
-    <!-- Estructura Original del Menú [4] -->
-    <header>
-        <nav>
-            <a href="#">HOMBRE</a>
-            <a href="#">MUJER</a>
-        </nav>
-        <div class="logo">
-            <img src="lakers-logo.png" alt="Lakers">
-        </div>
-        <nav>
-            <a href="#">REEDICIONES</a>
-            <a href="#">CONTACTO</a>
-        </nav>
-    </header>
+<nav>
+<div class="logo">HOOP CULTURE</div>
+<div class="links">
+<a href="#inicio">Inicio</a>
+<a href="#zapatillas">Zapatillas</a>
+<a href="#ropa">Ropa</a>
+<a href="#pagos">Pagos</a>
+</div>
+</nav>
 
-    <!-- Portada con Animación y Gradiente Original [1, 2] -->
-    <section class="hero">
-        <div class="hero-info">
-            <h1 style="font-size: 3em;">EDICIÓN SHOWTIME</h1>
-            <p>El legado de los 17 campeonatos en tus pies [9].</p>
-        </div>
-        <img src="zapatilla-lakers.png" alt="Sneaker" class="animated-shoe">
-    </section>
+<!-- HERO -->
+<div id="inicio" class="hero">
+<h1>HOOP CULTURE</h1>
+<p>Todo el estilo del básquet en un solo lugar</p>
+<a href="#zapatillas" class="cta">Ver colección</a>
+</div>
 
-    <!-- Sección de Producto con Mejoras de UX (Información Clara) [7, 10] -->
-    <section style="padding: 50px;">
-        <div class="product-card">
-            <img src="shoe-item.jpg" alt="Lakers Pro">
-            <h3>Sneaker Heritage Purple & Gold</h3>
-            <p class="stock-status">● En stock: Listo para envío [5]</p>
-            <p class="price">$129.90</p>
-            <span class="tax-label">Precio con impuestos incluidos [7]</span>
-            <br>
-            <button class="btn-add">AÑADIR AL CARRITO</button>
-            
-            <!-- Integración de pagos locales sugerida por Traza Virtual [8] -->
-            <div style="margin-top: 20px;">
-                <p style="font-size: 0.8em;">Compra rápida con:</p>
-                <button class="payment-btn yape">YAPE</button>
-                <button class="payment-btn plin">PLIN</button>
-            </div>
-        </div>
-    </section>
+<!-- ZAPATILLAS -->
+<div id="zapatillas" class="section container">
+<h2 class="section-title">Zapatillas de Basket</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"><div class="info"><h3>Basket Elite</h3><p class="price">S/ 480</p><div class="buy">Comprar</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a"><div class="info"><h3>Street Hoops</h3><p class="price">S/ 390</p><div class="buy">Comprar</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1528701800489-20be3c92f0bb"><div class="info"><h3>Air Court</h3><p class="price">S/ 520</p><div class="buy">Comprar</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5"><div class="info"><h3>Pro Dunk</h3><p class="price">S/ 450</p><div class="buy">Comprar</div></div></div>
+</div>
+</div>
+
+<!-- ROPA -->
+<div id="ropa" class="section container">
+<h2 class="section-title">Ropa Basket</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1520975922323-1d3b1c7cce9c"><div class="info"><h3>Hoodie Hoops</h3><p class="price">S/ 180</p><div class="buy">Comprar</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1602810316498-ab67cf68c8e1"><div class="info"><h3>Short Basket Pro</h3><p class="price">S/ 120</p><div class="buy">Comprar</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1593032465171-8c1e19d39b8c"><div class="info"><h3>Camiseta Street</h3><p class="price">S/ 90</p><div class="buy">Comprar</div></div></div>
+</div>
+</div>
+
+<!-- BENEFICIOS -->
+<div class="section container">
+<h2 class="section-title">¿Por qué comprar aquí?</h2>
+<div class="benefits">
+<div class="benefit">🚚 Envíos rápidos</div>
+<div class="benefit">💳 Pago con Yape y Plin</div>
+<div class="benefit">🔥 Productos exclusivos</div>
+<div class="benefit">⭐ Calidad garantizada</div>
+</div>
+</div>
+
+<!-- PAGOS -->
+<div id="pagos" class="pagos container">
+<h2 class="section-title" style="margin-bottom:8px">Métodos de pago</h2>
+<p>Puedes reemplazar estas imágenes con tus logos oficiales cuando quieras.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Yape_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Plin_logo.png">
+</div>
+
+<footer>
+<p>© 2026 HOOP CULTURE</p>
+</footer>
 
 </body>
 </html>
