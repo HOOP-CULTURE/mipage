@@ -29,7 +29,7 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
 url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070') center/cover;
 display:flex;
 flex-direction:column;
@@ -40,15 +40,15 @@ padding:20px;
 }
 
 .hero h1{
-font-size:75px;
+font-size:80px;
 font-weight:800;
-letter-spacing:4px;
+letter-spacing:5px;
 }
 
 .hero p{
 margin-top:15px;
-opacity:0.8;
 font-size:18px;
+opacity:0.8;
 }
 
 /* SECTION */
@@ -76,8 +76,8 @@ gap:30px;
 background:#111;
 border-radius:18px;
 overflow:hidden;
-transition:0.3s;
 cursor:pointer;
+transition:0.3s;
 }
 
 .card:hover{
@@ -99,7 +99,7 @@ height:5px;
 }
 
 .gallery::-webkit-scrollbar-thumb{
-background:#333;
+background:#444;
 border-radius:10px;
 }
 
@@ -120,7 +120,7 @@ gap:12px;
 }
 
 .info h3{
-font-size:25px;
+font-size:26px;
 }
 
 .desc{
@@ -138,11 +138,11 @@ font-weight:bold;
 .buy{
 margin-top:10px;
 background:#00ff88;
-color:black;
 padding:14px;
-text-align:center;
-font-weight:bold;
 border-radius:10px;
+text-align:center;
+color:black;
+font-weight:bold;
 transition:0.3s;
 }
 
@@ -181,7 +181,7 @@ margin-bottom:30px;
 width:140px;
 margin:15px;
 background:white;
-padding:10px;
+padding:12px;
 border-radius:12px;
 }
 
@@ -223,8 +223,8 @@ position:relative;
 
 .close{
 position:absolute;
+top:15px;
 right:20px;
-top:10px;
 font-size:45px;
 cursor:pointer;
 }
@@ -245,8 +245,8 @@ overflow-x:auto;
 width:90px;
 height:90px;
 object-fit:cover;
-cursor:pointer;
 border-radius:10px;
+cursor:pointer;
 background:#000;
 padding:5px;
 transition:0.3s;
@@ -269,8 +269,8 @@ font-weight:bold;
 
 .modal-desc{
 margin-top:20px;
-opacity:0.8;
 line-height:1.8;
+opacity:0.8;
 }
 
 .sizes{
@@ -296,11 +296,11 @@ color:black;
 .buy-modal{
 margin-top:35px;
 background:#00ff88;
-color:black;
 padding:18px;
+border-radius:12px;
 text-align:center;
 font-weight:bold;
-border-radius:12px;
+color:black;
 cursor:pointer;
 }
 
@@ -348,17 +348,27 @@ Todo el estilo del básquet en un solo lugar
 
 <div class="grid">
 
-<!-- PRODUCTO 1 -->
+<!-- KD 18 -->
 
-<div class="card" onclick="openModal()">
+<div class="card"
+onclick="openModal(
+'KD 18',
+'S/ 520',
+'La KD 18 está diseñada para velocidad, estabilidad y máximo confort.',
+[
+'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png',
+
+'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png',
+
+'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png'
+]
+)">
 
 <div class="gallery">
 
 <img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
 
 <img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png">
-
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png">
 
 </div>
 
@@ -367,7 +377,7 @@ Todo el estilo del básquet en un solo lugar
 <h3>KD 18</h3>
 
 <p class="desc">
-Zapatilla premium diseñada para velocidad, comodidad y máximo rendimiento.
+La KD 18 está diseñada para velocidad y máximo confort.
 </p>
 
 <p class="price">
@@ -382,15 +392,24 @@ Ver producto
 
 </div>
 
-<!-- PRODUCTO 2 -->
+<!-- KOBE -->
 
-<div class="card">
+<div class="card"
+onclick="openModal(
+'Kobe Street',
+'S/ 480',
+'Modelo inspirado en el juego rápido y agresivo de Kobe.',
+[
+'imagenes/kobe1.jpg',
+'imagenes/kobe2.jpg',
+'imagenes/kobe3.jpg'
+]
+)">
 
 <div class="gallery">
 
 <img src="imagenes/kobe1.jpg">
 <img src="imagenes/kobe2.jpg">
-<img src="imagenes/kobe3.jpg">
 
 </div>
 
@@ -399,7 +418,7 @@ Ver producto
 <h3>Kobe Street</h3>
 
 <p class="desc">
-Diseño inspirado en el básquet urbano moderno.
+Modelo inspirado en el juego rápido y agresivo de Kobe.
 </p>
 
 <p class="price">
@@ -407,22 +426,31 @@ S/ 480
 </p>
 
 <div class="buy">
-Comprar
+Ver producto
 </div>
 
 </div>
 
 </div>
 
-<!-- PRODUCTO 3 -->
+<!-- JORDAN -->
 
-<div class="card">
+<div class="card"
+onclick="openModal(
+'Jordan Court',
+'S/ 610',
+'Modelo premium para dominar la cancha con estilo.',
+[
+'imagenes/jordan1.jpg',
+'imagenes/jordan2.jpg',
+'imagenes/jordan3.jpg'
+]
+)">
 
 <div class="gallery">
 
 <img src="imagenes/jordan1.jpg">
 <img src="imagenes/jordan2.jpg">
-<img src="imagenes/jordan3.jpg">
 
 </div>
 
@@ -431,7 +459,7 @@ Comprar
 <h3>Jordan Court</h3>
 
 <p class="desc">
-Máximo rendimiento con estilo premium.
+Modelo premium para dominar la cancha con estilo.
 </p>
 
 <p class="price">
@@ -439,7 +467,7 @@ S/ 610
 </p>
 
 <div class="buy">
-Comprar
+Ver producto
 </div>
 
 </div>
@@ -580,38 +608,20 @@ Comprar
 
 <div class="modal-gallery">
 
-<img id="mainImage"
-src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
+<img id="mainImage">
 
-<div class="thumbs">
-
-<img onclick="changeImage(this)"
-src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
-
-<img onclick="changeImage(this)"
-src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png">
-
-<img onclick="changeImage(this)"
-src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png">
-
+<div class="thumbs" id="thumbsContainer">
 </div>
 
 </div>
 
 <div class="modal-info">
 
-<h1>KD 18</h1>
+<h1 id="modalTitle"></h1>
 
-<p class="modal-price">
-S/ 520
-</p>
+<p class="modal-price" id="modalPrice"></p>
 
-<p class="modal-desc">
-
-La KD 18 está diseñada para velocidad, estabilidad y máximo confort.
-Ideal para jugadores explosivos y outfits urbanos premium.
-
-</p>
+<p class="modal-desc" id="modalDesc"></p>
 
 <div class="sizes">
 
@@ -635,16 +645,41 @@ Comprar ahora
 
 <script>
 
-function openModal(){
+function openModal(title,price,desc,images){
+
 document.getElementById("productModal").style.display="block";
+
+document.getElementById("modalTitle").innerText=title;
+
+document.getElementById("modalPrice").innerText=price;
+
+document.getElementById("modalDesc").innerText=desc;
+
+document.getElementById("mainImage").src=images[0];
+
+let thumbs='';
+
+images.forEach(img => {
+
+thumbs += `
+<img src="${img}" onclick="changeImage('${img}')">
+`;
+
+});
+document.getElementById("thumbsContainer").innerHTML=thumbs;
+
 }
 
 function closeModal(){
+
 document.getElementById("productModal").style.display="none";
+
 }
 
-function changeImage(element){
-document.getElementById("mainImage").src=element.src;
+function changeImage(img){
+
+document.getElementById("mainImage").src=img;
+
 }
 
 </script>
