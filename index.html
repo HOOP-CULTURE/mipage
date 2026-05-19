@@ -94,20 +94,10 @@ scroll-snap-type:x mandatory;
 scroll-behavior:smooth;
 }
 
-.gallery::-webkit-scrollbar{
-height:5px;
-}
-
-.gallery::-webkit-scrollbar-thumb{
-background:#444;
-border-radius:10px;
-}
-
 .gallery img{
 min-width:100%;
 height:320px;
 object-fit:cover;
-scroll-snap-align:center;
 }
 
 /* INFO */
@@ -171,10 +161,6 @@ text-align:center;
 .pagos{
 padding:70px;
 text-align:center;
-}
-
-.pagos h2{
-margin-bottom:30px;
 }
 
 .pagos img{
@@ -247,13 +233,8 @@ height:90px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
-background:#000;
 padding:5px;
-transition:0.3s;
-}
-
-.thumbs img:hover{
-border:2px solid #00ff88;
+background:#000;
 }
 
 .modal-info h1{
@@ -293,6 +274,11 @@ background:#00ff88;
 color:black;
 }
 
+.sizes div.active{
+background:#00ff88;
+color:black;
+}
+
 .buy-modal{
 margin-top:35px;
 background:#00ff88;
@@ -303,8 +289,6 @@ font-weight:bold;
 color:black;
 cursor:pointer;
 }
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -353,22 +337,20 @@ Todo el estilo del básquet en un solo lugar
 <div class="card"
 onclick="openModal(
 'KD 18',
-'S/ 520',
-'La KD 18 está diseñada para velocidad, estabilidad y máximo confort.',
+'S/ 383',
+'Zapatilla ligera y explosiva ideal para jugadores rápidos.',
 [
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png',
-
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png',
-
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png'
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png'
 ]
 )">
 
 <div class="gallery">
 
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
-
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png">
 
 </div>
 
@@ -377,12 +359,11 @@ onclick="openModal(
 <h3>KD 18</h3>
 
 <p class="desc">
-¿Lo mejor de KD? Su vigor. El Slim Reaper nunca se cansa: su pasión por el juego y su energía para momentos decisivos son inagotables. Una combinación de amortiguación Air Zoom y Nike Air le da una amortiguación responsiva irreal. Además, hemos hecho orificios en toda la parte superior para reducir el peso y añadir transpirabilidad, lo que le permite jugar durante todo el día.
-
+Máxima comodidad y amortiguación Nike Air Zoom.
 </p>
 
 <p class="price">
-S/ 383 
+S/ 383
 </p>
 
 <div class="buy">
@@ -399,20 +380,20 @@ Ver producto
 onclick="openModal(
 'JA 2',
 'S/ 480',
-'Ja se esfuerza por dar lo mejor de sí mismo cuando el partido pende de un hilo. Por eso les dimos a los Ja 2 un diseño más ligero. Se combinan con la amortiguación Air Zoom para mantener la frescura cuando está en acción. Y la tracción inspirada en los neumáticos de un tractor ayuda a cambiar de dirección con facilidad. Ja se trata de estar al máximo. ¿Tú también lo estás?.',
+'Modelo diseñado para cambios rápidos y máxima tracción.',
 [
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png',
-'imagenes/kobe3.jpg'
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png'
 ]
 )">
 
 <div class="gallery">
 
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png">
-  
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png">
+
 </div>
 
 <div class="info">
@@ -420,7 +401,7 @@ onclick="openModal(
 <h3>JA 2</h3>
 
 <p class="desc">
-Ja se esfuerza por dar lo mejor de sí mismo cuando el partido pende de un hilo. Por eso les dimos a los Ja 2 un diseño más ligero. Se combinan con la amortiguación Air Zoom para mantener la frescura cuando está en acción. Y la tracción inspirada en los neumáticos de un tractor ayuda a cambiar de dirección con facilidad. Ja se trata de estar al máximo. ¿Tú también lo estás?
+Explosividad y control total en cada movimiento.
 </p>
 
 <p class="price">
@@ -435,37 +416,80 @@ Ver producto
 
 </div>
 
-<!-- JORDAN -->
+<!-- KOBE 8 -->
 
 <div class="card"
 onclick="openModal(
-'Jordan Court',
-'S/ 610',
-'Modelo premium para dominar la cancha con estilo.',
+'KOBE 8',
+'S/ 650',
+'Modelo inspirado en la mentalidad Mamba.',
 [
-'imagenes/jordan1.jpg',
-'imagenes/jordan2.jpg',
-'imagenes/jordan3.jpg'
+'https://images.stockx.com/images/Nike-Kobe-8-Protro-Court-Purple.jpg',
+'https://images.stockx.com/images/Nike-Kobe-8-Protro-Halo.jpg',
+'https://images.stockx.com/images/Nike-Kobe-8-Protro-Venice-Beach.jpg'
 ]
 )">
 
 <div class="gallery">
 
-<img src="imagenes/jordan1.jpg">
-<img src="imagenes/jordan2.jpg">
+<img src="https://images.stockx.com/images/Nike-Kobe-8-Protro-Court-Purple.jpg">
+<img src="https://images.stockx.com/images/Nike-Kobe-8-Protro-Halo.jpg">
+<img src="https://images.stockx.com/images/Nike-Kobe-8-Protro-Venice-Beach.jpg">
 
 </div>
 
 <div class="info">
 
-<h3>Jordan Court</h3>
+<h3>KOBE 8</h3>
 
 <p class="desc">
-Modelo premium para dominar la cancha con estilo.
+Velocidad, agarre y estilo legendario.
 </p>
 
 <p class="price">
-S/ 610
+S/ 650
+</p>
+
+<div class="buy">
+Ver producto
+</div>
+
+</div>
+
+</div>
+
+<!-- BOOK 1 -->
+
+<div class="card"
+onclick="openModal(
+'BOOK 1',
+'S/ 590',
+'Modelo Devin Booker estilo retro moderno.',
+[
+'https://images.stockx.com/images/Nike-Book-1-Mirage.jpg',
+'https://images.stockx.com/images/Nike-Book-1-Hike.jpg',
+'https://images.stockx.com/images/Nike-Book-1-Sunset.jpg'
+]
+)">
+
+<div class="gallery">
+
+<img src="https://images.stockx.com/images/Nike-Book-1-Mirage.jpg">
+<img src="https://images.stockx.com/images/Nike-Book-1-Hike.jpg">
+<img src="https://images.stockx.com/images/Nike-Book-1-Sunset.jpg">
+
+</div>
+
+<div class="info">
+
+<h3>BOOK 1</h3>
+
+<p class="desc">
+Diseño premium para outfit y cancha.
+</p>
+
+<p class="price">
+S/ 590
 </p>
 
 <div class="buy">
@@ -492,8 +516,9 @@ Ver producto
 
 <div class="gallery">
 
-<img src="imagenes/hoodie1.jpg">
-<img src="imagenes/hoodie2.jpg">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200">
 
 </div>
 
@@ -521,8 +546,9 @@ Comprar
 
 <div class="gallery">
 
-<img src="imagenes/short1.jpg">
-<img src="imagenes/short2.jpg">
+<img src="https://images.unsplash.com/photo-1506629905607-d9d7d3dba1b3?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200">
 
 </div>
 
@@ -612,8 +638,7 @@ Comprar
 
 <img id="mainImage">
 
-<div class="thumbs" id="thumbsContainer">
-</div>
+<div class="thumbs" id="thumbsContainer"></div>
 
 </div>
 
@@ -627,15 +652,15 @@ Comprar
 
 <div class="sizes">
 
-<div>39</div>
-<div>40</div>
-<div>41</div>
-<div>42</div>
-<div>43</div>
+<div onclick="selectSize(this)">39</div>
+<div onclick="selectSize(this)">40</div>
+<div onclick="selectSize(this)">41</div>
+<div onclick="selectSize(this)">42</div>
+<div onclick="selectSize(this)">43</div>
 
 </div>
 
-<div class="buy-modal">
+<div class="buy-modal" onclick="buyWhatsApp()">
 Comprar ahora
 </div>
 
@@ -646,6 +671,8 @@ Comprar ahora
 </div>
 
 <script>
+
+let selectedSize = "";
 
 function openModal(title,price,desc,images){
 
@@ -659,6 +686,13 @@ document.getElementById("modalDesc").innerText=desc;
 
 document.getElementById("mainImage").src=images[0];
 
+selectedSize = "";
+
+document.querySelectorAll(".sizes div")
+.forEach(size => {
+size.classList.remove("active");
+});
+
 let thumbs='';
 
 images.forEach(img => {
@@ -668,6 +702,7 @@ thumbs += `
 `;
 
 });
+
 document.getElementById("thumbsContainer").innerHTML=thumbs;
 
 }
@@ -684,7 +719,53 @@ document.getElementById("mainImage").src=img;
 
 }
 
+function selectSize(element){
+
+document.querySelectorAll(".sizes div")
+.forEach(size => {
+size.classList.remove("active");
+});
+
+element.classList.add("active");
+
+selectedSize = element.innerText;
+
+}
+
+function buyWhatsApp(){
+
+if(selectedSize === ""){
+
+alert("Selecciona una talla");
+
+return;
+
+}
+
+let product =
+document.getElementById("modalTitle").innerText;
+
+let price =
+document.getElementById("modalPrice").innerText;
+
+let message =
+`Hola, quiero comprar:
+
+🏀 Producto: ${product}
+📏 Talla: ${selectedSize}
+💰 Precio: ${price}`;
+
+let phone = "51987654321";
+
+let url =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
+
+}
+
 </script>
 
 </body>
+
 </html>
