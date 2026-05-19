@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HOOP CULTURE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070') center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:80px;
+font-weight:800;
+letter-spacing:5px;
+}
+
+.hero p{
+margin-top:15px;
+font-size:18px;
+opacity:0.8;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 70px;
+}
+
+.section h2{
+font-size:38px;
+margin-bottom:40px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+background:#111;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* GALLERY */
+
+.gallery{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+}
+
+.gallery img{
+min-width:100%;
+height:320px;
+object-fit:cover;
+}
+
+/* INFO */
+
+.info{
+padding:22px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.info h3{
+font-size:26px;
+}
+
+.desc{
+opacity:0.7;
+line-height:1.6;
+font-size:14px;
+}
+
+.price{
+color:#00ff88;
+font-size:24px;
+font-weight:bold;
+}
+
+.buy{
+margin-top:10px;
+background:#00ff88;
+padding:14px;
+border-radius:10px;
+text-align:center;
+color:black;
+font-weight:bold;
+transition:0.3s;
+}
+
+.buy:hover{
+background:white;
+}
+
+/* BENEFITS */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:35px;
+}
+
+.benefit{
+background:#111;
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+/* PAGOS */
+
+.pagos{
+padding:70px;
+text-align:center;
+}
+
+.pagos img{
+width:140px;
+margin:15px;
+background:white;
+padding:12px;
+border-radius:12px;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:35px;
+text-align:center;
+opacity:0.7;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.92);
+overflow:auto;
+padding:40px;
+}
+
+.modal-content{
+background:#111;
+max-width:1200px;
+margin:auto;
+border-radius:20px;
+padding:35px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:45px;
+cursor:pointer;
+}
+
+.modal-gallery img{
+width:100%;
+border-radius:18px;
+}
+
+.thumbs{
+display:flex;
+gap:10px;
+margin-top:15px;
+overflow-x:auto;
+}
+
+.thumbs img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+padding:5px;
+background:#000;
+}
+
+.modal-info h1{
+font-size:55px;
+}
+
+.modal-price{
+margin-top:20px;
+font-size:35px;
+color:#00ff88;
+font-weight:bold;
+}
+
+.modal-desc{
+margin-top:20px;
+line-height:1.8;
+opacity:0.8;
+}
+
+.sizes{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.sizes div{
+padding:14px 18px;
+background:#222;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.sizes div:hover{
+background:#00ff88;
+color:black;
+}
+
+.sizes div.active{
+background:#00ff88;
+color:black;
+}
+
+.buy-modal{
+margin-top:35px;
+background:#00ff88;
+padding:18px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+color:black;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:50px;
+}
+
+.section{
+padding:50px 25px;
+}
+
+.modal-content{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>HOOP CULTURE</h1>
+
+<p>
+Todo el estilo del básquet en un solo lugar
+</p>
+
+</div>
+
+<!-- ZAPATILLAS -->
+
+<div class="section">
+
+<h2>Zapatillas de Basket</h2>
+
+<div class="grid">
+
+<!-- KD 18 -->
+
+<div class="card"
+onclick="openModal(
+'KD 18',
+'S/ 383',
+'Zapatilla ligera y explosiva ideal para jugadores rápidos.',
+[
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png'
+]
+)">
+
+<div class="gallery">
+
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png">
+
+</div>
+
+<div class="info">
+
+<h3>KD 18</h3>
+
+<p class="desc">
+Máxima comodidad y amortiguación Nike Air Zoom.
+</p>
+
+<p class="price">
+S/ 383
+</p>
+
+<div class="buy">
+Ver producto
+</div>
+
+</div>
+
+</div>
+
+<!-- JA 2 -->
+
+<div class="card"
+onclick="openModal(
+'JA 2',
+'S/ 480',
+'Modelo diseñado para cambios rápidos y máxima tracción.',
+[
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png'
+]
+)">
+
+<div class="gallery">
+
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png">
+
+</div>
+
+<div class="info">
+
+<h3>JA 2</h3>
+
+<p class="desc">
+Explosividad y control total en cada movimiento.
+</p>
+
+<p class="price">
+S/ 480
+</p>
+
+<div class="buy">
+Ver producto
+</div>
+
+</div>
+
+</div>
+
+<!-- KOBE 8 -->
+
+<div class="card"
+onclick="openModal(
+'KOBE 8',
+'S/ 650',
+'Modelo inspirado en la mentalidad Mamba.',
+[
+'https://images.stockx.com/images/Nike-Kobe-8-Protro-Court-Purple.jpg',
+'https://images.stockx.com/images/Nike-Kobe-8-Protro-Halo.jpg',
+'https://images.stockx.com/images/Nike-Kobe-8-Protro-Venice-Beach.jpg'
+]
+)">
+
+<div class="gallery">
+
+<img src="https://images.stockx.com/images/Nike-Kobe-8-Protro-Court-Purple.jpg">
+<img src="https://images.stockx.com/images/Nike-Kobe-8-Protro-Halo.jpg">
+<img src="https://images.stockx.com/images/Nike-Kobe-8-Protro-Venice-Beach.jpg">
+
+</div>
+
+<div class="info">
+
+<h3>KOBE 8</h3>
+
+<p class="desc">
+Velocidad, agarre y estilo legendario.
+</p>
+
+<p class="price">
+S/ 650
+</p>
+
+<div class="buy">
+Ver producto
+</div>
+
+</div>
+
+</div>
+
+<!-- BOOK 1 -->
+
+<div class="card"
+onclick="openModal(
+'BOOK 1',
+'S/ 590',
+'Modelo Devin Booker estilo retro moderno.',
+[
+'https://images.stockx.com/images/Nike-Book-1-Mirage.jpg',
+'https://images.stockx.com/images/Nike-Book-1-Hike.jpg',
+'https://images.stockx.com/images/Nike-Book-1-Sunset.jpg'
+]
+)">
+
+<div class="gallery">
+
+<img src="https://images.stockx.com/images/Nike-Book-1-Mirage.jpg">
+<img src="https://images.stockx.com/images/Nike-Book-1-Hike.jpg">
+<img src="https://images.stockx.com/images/Nike-Book-1-Sunset.jpg">
+
+</div>
+
+<div class="info">
+
+<h3>BOOK 1</h3>
+
+<p class="desc">
+Diseño premium para outfit y cancha.
+</p>
+
+<p class="price">
+S/ 590
+</p>
+
+<div class="buy">
+Ver producto
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ROPA -->
+
+<div class="section">
+
+<h2>Ropa Basket</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200">
+
+</div>
+
+<div class="info">
+
+<h3>Hoodie Hoops</h3>
+
+<p class="desc">
+Hoodie oversize estilo street basketball.
+</p>
+
+<p class="price">
+S/ 180
+</p>
+
+<div class="buy">
+Comprar
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1506629905607-d9d7d3dba1b3?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200">
+
+</div>
+
+<div class="info">
+
+<h3>Short Basket Pro</h3>
+
+<p class="desc">
+Short cómodo ideal para cancha y outfit urbano.
+</p>
+
+<p class="price">
+S/ 120
+</p>
+
+<div class="buy">
+Comprar
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BENEFICIOS -->
+
+<div class="section">
+
+<h2>¿Por qué comprar aquí?</h2>
+
+<div class="benefits">
+
+<div class="benefit">
+🚚 Envíos rápidos
+</div>
+
+<div class="benefit">
+💳 Pago con Yape y Plin
+</div>
+
+<div class="benefit">
+🔥 Productos exclusivos
+</div>
+
+<div class="benefit">
+⭐ Calidad garantizada
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGOS -->
+
+<div class="pagos">
+
+<h2>Métodos de pago</h2>
+
+<img src="https://marketingperu.beglobal.biz/wp-content/uploads/2025/01/logo-yape-color-negro.png">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xzQhxlNcvYgeM85r6_2UawHbzCfHE7x0Aw&s">
+
+</div>
+
+<footer>
+
+<p>
+© 2026 HOOP CULTURE
+</p>
+
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="productModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">
+&times;
+</span>
+
+<div class="modal-gallery">
+
+<img id="mainImage">
+
+<div class="thumbs" id="thumbsContainer"></div>
+
+</div>
+
+<div class="modal-info">
+
+<h1 id="modalTitle"></h1>
+
+<p class="modal-price" id="modalPrice"></p>
+
+<p class="modal-desc" id="modalDesc"></p>
+
+<div class="sizes">
+
+<div onclick="selectSize(this)">39</div>
+<div onclick="selectSize(this)">40</div>
+<div onclick="selectSize(this)">41</div>
+<div onclick="selectSize(this)">42</div>
+<div onclick="selectSize(this)">43</div>
+
+</div>
+
+<div class="buy-modal" onclick="buyWhatsApp()">
+Comprar ahora
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let selectedSize = "";
+
+function openModal(title,price,desc,images){
+
+document.getElementById("productModal").style.display="block";
+
+document.getElementById("modalTitle").innerText=title;
+
+document.getElementById("modalPrice").innerText=price;
+
+document.getElementById("modalDesc").innerText=desc;
+
+document.getElementById("mainImage").src=images[0];
+
+selectedSize = "";
+
+document.querySelectorAll(".sizes div")
+.forEach(size => {
+size.classList.remove("active");
+});
+
+let thumbs='';
+
+images.forEach(img => {
+
+thumbs += `
+<img src="${img}" onclick="changeImage('${img}')">
+`;
+
+});
+
+document.getElementById("thumbsContainer").innerHTML=thumbs;
+
+}
+
+function closeModal(){
+
+document.getElementById("productModal").style.display="none";
+
+}
+
+function changeImage(img){
+
+document.getElementById("mainImage").src=img;
+
+}
+
+function selectSize(element){
+
+document.querySelectorAll(".sizes div")
+.forEach(size => {
+size.classList.remove("active");
+});
+
+element.classList.add("active");
+
+selectedSize = element.innerText;
+
+}
+
+function buyWhatsApp(){
+
+if(selectedSize === ""){
+
+alert("Selecciona una talla");
+
+return;
+
+}
+
+let product =
+document.getElementById("modalTitle").innerText;
+
+let price =
+document.getElementById("modalPrice").innerText;
+
+let message =
+`Hola, quiero comprar:
+
+🏀 Producto: ${product}
+📏 Talla: ${selectedSize}
+💰 Precio: ${price}`;
+
+let phone = "51987654321";
+
+let url =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
+
+}
+
+</script>
+
+</body>
+
+</html>
