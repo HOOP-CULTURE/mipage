@@ -440,89 +440,42 @@ grid-template-columns:1fr;
 
 </div>
 
-<!-- SABRINA 3 -->
+</div>
+</div>
+
+<!-- ROPA -->
+
+<div class="section">
+
+<h2>Ropa Basket</h2>
+
+<div class="grid">
+
+<!-- HOODIE -->
 
 <div class="card" onclick="openModal(
-'Sabrina 3',
-'S/ 429',
-'Sabrina 3 diseñada para velocidad, estabilidad y control.',
+'Hoodie Hoops',
+'S/ 180',
+'Hoodie oversize estilo street basketball.',
 [
-'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d6f8f0d-1f2d-4c70-8d1e-sabrina.jpg',
-'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d6f8f0d-1f2d-4c70-8d1e-sabrina2.jpg',
-'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d6f8f0d-1f2d-4c70-8d1e-sabrina3.jpg'
+'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200',
+'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200',
+'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200'
 ],
-'zapatilla'
+'ropa'
 )">
 
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=1200">
-<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1200">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200">
 </div>
 
 <div class="info">
-<h3>Sabrina 3</h3>
-<p class="desc">Sabrina 3 diseñada para velocidad, estabilidad y control.</p>
-<p class="price">S/ 429</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- KOBE 6 -->
-
-<div class="card" onclick="openModal(
-'Kobe 6',
-'S/ 499',
-'Kobe 6 ofrece ligereza, tracción y rendimiento élite.',
-[
-'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200',
-'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=1200',
-'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1200'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=1200">
-<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1200">
-</div>
-
-<div class="info">
-<h3>Kobe 6</h3>
-<p class="desc">Kobe 6 ofrece ligereza, tracción y rendimiento élite.</p>
-<p class="price">S/ 499</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- AE 2 -->
-
-<div class="card" onclick="openModal(
-'AE 2',
-'S/ 459',
-'AE 2 creada para explosividad, potencia y comodidad.',
-[
-'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200',
-'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=1200',
-'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1200'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=1200">
-<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1200">
-</div>
-
-<div class="info">
-<h3>AE 2</h3>
-<p class="desc">AE 2 creada para explosividad, potencia y comodidad.</p>
-<p class="price">S/ 459</p>
-<div class="buy">Ver producto</div>
+<h3>Hoodie Hoops</h3>
+<p class="desc">Hoodie oversize estilo street basketball.</p>
+<p class="price">S/ 180</p>
+<div class="buy">Comprar</div>
 </div>
 
 </div>
@@ -613,7 +566,7 @@ grid-template-columns:1fr;
 
 <p class="modal-desc" id="modalDesc"></p>
 
-<div class="sizes"><div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div><div onclick="selectSize(this)">41</div><div onclick="selectSize(this)">42</div><div onclick="selectSize(this)">43</div></div>
+<div class="sizes" id="sizesContainer"></div>
 
 <div class="buy-modal" onclick="buyWhatsApp()">
 Comprar ahora
@@ -627,7 +580,7 @@ Comprar ahora
 
 let selectedSize = "";
 
-function openModal(title,price,desc,images){
+function openModal(title,price,desc,images,type){
 document.getElementById("productModal").style.display="block";
 document.getElementById("modalTitle").innerText=title;
 document.getElementById("modalPrice").innerText=price;
@@ -638,6 +591,10 @@ document.querySelectorAll(".sizes div").forEach(size => { size.classList.remove(
 let thumbs='';
 images.forEach(img => { thumbs += `<img src="${img}" onclick="changeImage('${img}')">`; });
 document.getElementById("thumbsContainer").innerHTML=thumbs;
+let sizesHTML = type === "ropa"
+? `<div onclick="selectSize(this)">S</div><div onclick="selectSize(this)">M</div><div onclick="selectSize(this)">L</div><div onclick="selectSize(this)">XL</div>`
+: `<div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div><div onclick="selectSize(this)">41</div><div onclick="selectSize(this)">42</div><div onclick="selectSize(this)">43</div>`;
+document.getElementById("sizesContainer").innerHTML = sizesHTML;
 }
 function closeModal(){ document.getElementById("productModal").style.display="none"; }
 function changeImage(img){ document.getElementById("mainImage").src=img; }
