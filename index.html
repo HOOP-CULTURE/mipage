@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HOOP CULTURE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070') center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:80px;
+font-weight:800;
+letter-spacing:5px;
+}
+
+.hero p{
+margin-top:15px;
+font-size:18px;
+opacity:0.8;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 70px;
+}
+
+.section h2{
+font-size:38px;
+margin-bottom:40px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+background:#111;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* GALLERY */
+
+.gallery{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+}
+
+.gallery img{
+min-width:100%;
+height:320px;
+object-fit:cover;
+}
+
+/* INFO */
+
+.info{
+padding:22px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.info h3{
+font-size:26px;
+}
+
+.desc{
+opacity:0.7;
+line-height:1.6;
+font-size:14px;
+}
+
+.price{
+color:#00ff88;
+font-size:24px;
+font-weight:bold;
+}
+
+.buy{
+margin-top:10px;
+background:#00ff88;
+padding:14px;
+border-radius:10px;
+text-align:center;
+color:black;
+font-weight:bold;
+transition:0.3s;
+}
+
+.buy:hover{
+background:white;
+}
+
+/* BENEFITS */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:35px;
+}
+
+.benefit{
+background:#111;
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+/* PAGOS */
+
+.pagos{
+padding:70px;
+text-align:center;
+}
+
+.pagos img{
+width:140px;
+margin:15px;
+background:white;
+padding:12px;
+border-radius:12px;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:35px;
+text-align:center;
+opacity:0.7;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.92);
+overflow:auto;
+padding:40px;
+}
+
+.modal-content{
+background:#111;
+max-width:1200px;
+margin:auto;
+border-radius:20px;
+padding:35px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:45px;
+cursor:pointer;
+}
+
+.modal-gallery img{
+width:100%;
+border-radius:18px;
+}
+
+.thumbs{
+display:flex;
+gap:10px;
+margin-top:15px;
+overflow-x:auto;
+}
+
+.thumbs img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+padding:5px;
+background:#000;
+}
+
+.modal-info h1{
+font-size:55px;
+}
+
+.modal-price{
+margin-top:20px;
+font-size:35px;
+color:#00ff88;
+font-weight:bold;
+}
+
+.modal-desc{
+margin-top:20px;
+line-height:1.8;
+opacity:0.8;
+}
+
+.sizes{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.sizes div{
+padding:14px 18px;
+background:#222;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.sizes div:hover{
+background:#00ff88;
+color:black;
+}
+
+.sizes div.active{
+background:#00ff88;
+color:black;
+}
+
+.buy-modal{
+margin-top:35px;
+background:#00ff88;
+padding:18px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+color:black;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:50px;
+}
+
+.section{
+padding:50px 25px;
+}
+
+.modal-content{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>HOOP CULTURE</h1>
+<p>Todo el estilo del básquet en un solo lugar</p>
+</div>
+
+<!-- ZAPATILLAS -->
+
+<div class="section">
+
+<h2>Zapatillas de Basket</h2>
+
+<div class="grid">
+
+<!-- KD 18 -->
+
+<div class="card" onclick="openModal(
+'KD 18',
+'S/ 409',
+'¿El mayor don de KD? Su resistencia.',
+[
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/575fa572-d1be-4b6b-95a8-95bbb412f6fd/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97a6271e-042d-42be-8981-5ca4b9142ed1/KD18.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f90f1e7f-22f9-4230-ad03-422ec74118e3/KD18.png">
+</div>
+
+<div class="info">
+<h3>KD 18</h3>
+<p class="desc">¿El mayor don de KD? Su resistencia.</p>
+<p class="price">S/ 409</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+<!-- JA 2 -->
+
+<div class="card" onclick="openModal(
+'JA 2',
+'S/ 335',
+'Ja se esfuerza al máximo para ser el mejor.',
+[
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png',
+'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png">
+<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png">
+</div>
+
+<div class="info">
+<h3>JA 2</h3>
+<p class="desc">Ja se esfuerza al máximo para ser el mejor.</p>
+<p class="price">S/ 335</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+<!-- CURRY -->
+
+<div class="card" onclick="openModal(
+'Curry Splash 25',
+'S/ 389',
+'Diseñado para dominar cualquier cancha.',
+[
+'https://underarmour.scene7.com/is/image/Underarmour/3028459-003_PAIR?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0',
+'https://underarmour.scene7.com/is/image/Underarmour/3028459-003_TOE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0',
+'https://underarmour.scene7.com/is/image/Underarmour/3028459-003_SOLE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://underarmour.scene7.com/is/image/Underarmour/3028459-003_PAIR?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0">
+<img src="https://underarmour.scene7.com/is/image/Underarmour/3028459-003_TOE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0">
+<img src="https://underarmour.scene7.com/is/image/Underarmour/3028459-003_SOLE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0">
+</div>
+
+<div class="info">
+<h3>Curry Splash 25</h3>
+<p class="desc">Diseñado para dominar cualquier cancha.</p>
+<p class="price">S/ 389</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+<!-- BELIEVE -->
+
+<div class="card" onclick="openModal(
+'BELIEVE THAT 1',
+'S/ 450',
+'Juega con confianza y deja que tu talento brille.',
+[
+'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/88e93aa9a7da42628b8204e0210d1b03_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_09_standard.jpg',
+'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c667fda4fff84dd184ebdaa93ba4e02d_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_03_standard.jpg',
+'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/16e88f5397c541f485756b4e81e64bba_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_41_detail.jpg'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/88e93aa9a7da42628b8204e0210d1b03_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_09_standard.jpg">
+<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c667fda4fff84dd184ebdaa93ba4e02d_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_03_standard.jpg">
+<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/16e88f5397c541f485756b4e81e64bba_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_41_detail.jpg">
+</div>
+
+<div class="info">
+<h3>BELIEVE THAT 1</h3>
+<p class="desc">Juega con confianza y deja que tu talento brille.</p>
+<p class="price">S/ 450</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+
+<!-- BOOK COURT -->
+
+<div class="card" onclick="openModal(
+'Book Court',
+'S/ 560',
+'Zapatilla urbana de básquet con estilo retro y amortiguación premium.',
+[
+'https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1200',
+'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200">
+</div>
+
+<div class="info">
+<h3>Book Court</h3>
+<p class="desc">Zapatilla urbana de básquet con estilo retro y amortiguación premium.</p>
+<p class="price">S/ 560</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+<!-- Jordan Legacy -->
+
+<div class="card" onclick="openModal(
+'Jordan Legacy',
+'S/ 620',
+'Diseño inspirado en la cultura Jordan para cancha y outfits streetwear.',
+[
+'https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=1200',
+'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200',
+'https://images.unsplash.com/photo-1514989940723-e8e51635b782?q=80&w=1200'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?q=80&w=1200">
+</div>
+
+<div class="info">
+<h3>Jordan Legacy</h3>
+<p class="desc">Diseño inspirado en la cultura Jordan para cancha y outfits streetwear.</p>
+<p class="price">S/ 620</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+<!-- Luka Rise -->
+
+<div class="card" onclick="openModal(
+'Luka Rise',
+'S/ 430',
+'Modelo cómodo y estable para cambios de ritmo, stepbacks y juego creativo.',
+[
+'https://images.unsplash.com/photo-1528701800489-20be3c92f0bb?q=80&w=1200',
+'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200',
+'https://images.unsplash.com/photo-1605348532760-6753d2c43329?q=80&w=1200'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1528701800489-20be3c92f0bb?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?q=80&w=1200">
+</div>
+
+<div class="info">
+<h3>Luka Rise</h3>
+<p class="desc">Modelo cómodo y estable para cambios de ritmo, stepbacks y juego creativo.</p>
+<p class="price">S/ 430</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+<!-- Air Zoom Court -->
+
+<div class="card" onclick="openModal(
+'Air Zoom Court',
+'S/ 510',
+'Zapatilla liviana para saltos explosivos, tracción fuerte y uso diario.',
+[
+'https://images.unsplash.com/photo-1600185365778-7875a359b924?q=80&w=1200',
+'https://images.unsplash.com/photo-1584735175097-719d848f8449?q=80&w=1200',
+'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200'
+],
+'zapatilla'
+)">
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1600185365778-7875a359b924?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1584735175097-719d848f8449?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200">
+</div>
+
+<div class="info">
+<h3>Air Zoom Court</h3>
+<p class="desc">Zapatilla liviana para saltos explosivos, tracción fuerte y uso diario.</p>
+<p class="price">S/ 510</p>
+<div class="buy">Ver producto</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ROPA -->
+
+<div class="section">
+
+<h2>Ropa Basket</h2>
+
+<div class="grid">
+
+<!-- HOODIE -->
+
+<div class="card" onclick="openModal(
+'Hoodie Hoops',
+'S/ 180',
+'Hoodie oversize estilo street basketball.',
+[
+'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200',
+'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200',
+'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200'
+],
+'ropa'
+)">
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200">
+</div>
+
+<div class="info">
+<h3>Hoodie Hoops</h3>
+<p class="desc">Hoodie oversize estilo street basketball.</p>
+<p class="price">S/ 180</p>
+<div class="buy">Comprar</div>
+</div>
+
+</div>
+
+<!-- SHORT -->
+
+<div class="card" onclick="openModal(
+'Short Basket Pro',
+'S/ 120',
+'Short cómodo ideal para cancha y outfit urbano.',
+[
+'https://images.unsplash.com/photo-1506629905607-d9d7d3dba1b3?q=80&w=1200',
+'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200',
+'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200'
+],
+'ropa'
+)">
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1506629905607-d9d7d3dba1b3?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200">
+</div>
+
+<div class="info">
+<h3>Short Basket Pro</h3>
+<p class="desc">Short cómodo ideal para cancha y outfit urbano.</p>
+<p class="price">S/ 120</p>
+<div class="buy">Comprar</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- BENEFICIOS -->
+
+<div class="section">
+
+<h2>¿Por qué comprar aquí?</h2>
+
+<div class="benefits">
+
+<div class="benefit">🚚 Envíos rápidos</div>
+<div class="benefit">💳 Pago con Yape y Plin</div>
+<div class="benefit">🔥 Productos exclusivos</div>
+<div class="benefit">⭐ Calidad garantizada</div>
+
+</div>
+
+</div>
+
+<!-- PAGOS -->
+
+<div class="pagos">
+
+<h2>Métodos de pago</h2>
+
+<img src="https://marketingperu.beglobal.biz/wp-content/uploads/2025/01/logo-yape-color-negro.png">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xzQhxlNcvYgeM85r6_2UawHbzCfHE7x0Aw&s">
+
+</div>
+
+<footer>
+<p>© 2026 HOOP CULTURE</p>
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="productModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<div class="modal-gallery">
+<img id="mainImage">
+<div class="thumbs" id="thumbsContainer"></div>
+</div>
+
+<div class="modal-info">
+
+<h1 id="modalTitle"></h1>
+
+<p class="modal-price" id="modalPrice"></p>
+
+<p class="modal-desc" id="modalDesc"></p>
+
+<div class="sizes" id="sizesContainer"></div>
+
+<div class="buy-modal" onclick="buyWhatsApp()">
+Comprar ahora
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+
+let selectedSize = "";
+
+function openModal(title,price,desc,images,type){
+document.getElementById("productModal").style.display="block";
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalPrice").innerText=price;
+document.getElementById("modalDesc").innerText=desc;
+document.getElementById("mainImage").src=images[0];
+selectedSize = "";
+document.querySelectorAll(".sizes div").forEach(size => { size.classList.remove("active"); });
+let thumbs='';
+images.forEach(img => { thumbs += `<img src="${img}" onclick="changeImage('${img}')">`; });
+document.getElementById("thumbsContainer").innerHTML=thumbs;
+let sizesHTML = type === "ropa"
+? `<div onclick="selectSize(this)">S</div><div onclick="selectSize(this)">M</div><div onclick="selectSize(this)">L</div><div onclick="selectSize(this)">XL</div>`
+: `<div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div><div onclick="selectSize(this)">41</div><div onclick="selectSize(this)">42</div><div onclick="selectSize(this)">43</div>`;
+document.getElementById("sizesContainer").innerHTML = sizesHTML;
+}
+function closeModal(){ document.getElementById("productModal").style.display="none"; }
+function changeImage(img){ document.getElementById("mainImage").src=img; }
+function selectSize(element){ document.querySelectorAll(".sizes div").forEach(size => { size.classList.remove("active"); }); element.classList.add("active"); selectedSize = element.innerText; }
+function buyWhatsApp(){
+if(selectedSize===""){ alert("Selecciona una talla"); return; }
+let product = document.getElementById("modalTitle").innerText;
+let price = document.getElementById("modalPrice").innerText;
+let message = `Hola, quiero comprar:\n\n🏀 Producto: ${product}\n📏 Talla: ${selectedSize}\n💰 Precio: ${price}`;
+let phone = "51987654321";
+let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+window.open(url,"_blank");
+}
+
+</script>
+
+</body>
+</html>
