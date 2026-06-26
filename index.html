@@ -1239,26 +1239,35 @@ window.open(url,"_blank");
 }
 
 <script>
-let startY = 0;
-let endY = 0;
-let startX = 0;
-let endX = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('productModal');
+    if (!modal) return;
 
-const modal = document.querySelector('.modal');
+    let startY = 0;
+    let endY = 0;
+    let startX = 0;
+    let endX = 0;
 
-modal.addEventListener('touchstart', function(e){
-    startY = e.touches[0].clientY;
-    startX = e.touches[0].clientX;
+    modal.addEventListener('touchstart', function(e){
+        startY = e.touches[0].clientY;
+        startX = e.touches[0].clientX;
+    });
+
+    modal.addEventListener('touchmove', function(e){
+        endY = e.touches[0].clientY;
+        endX = e.touches[0].clientX;
+    });
+
+    modal.addEventListener('touchend', function(){
+        const vertical = endY - startY;
+        const horizontal = endX - startX;
+
+        if (vertical > 100 || horizontal > 100) {
+            closeModal();
+        }
+    });
 });
-
-modal.addEventListener('touchmove', function(e){
-    endY = e.touches[0].clientY;
-    endX = e.touches[0].clientX;
-});
-
-modal.addEventListener('touchend', function(){
-    const vertical = endY - startY;
-    const horizontal = endX - startX;
+</script>
 
 </body>
 </html>
