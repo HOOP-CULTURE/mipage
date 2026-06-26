@@ -246,6 +246,16 @@ top:15px;
 right:20px;
 font-size:45px;
 cursor:pointer;
+color:#fff;
+background:rgba(0,0,0,0.8);
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:1000;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 .modal-gallery img{
@@ -348,9 +358,13 @@ gap:24px;
 }
 
 .close{
+top:12px;
+right:12px;
+width:55px;
+height:55px;
 font-size:38px;
-right:14px;
-top:8px;
+background:rgba(0,0,0,0.9);
+color:#fff;
 }
 
 }
@@ -1224,7 +1238,27 @@ let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 window.open(url,"_blank");
 }
 
-</script>
+<script>
+let startY = 0;
+let endY = 0;
+let startX = 0;
+let endX = 0;
+
+const modal = document.querySelector('.modal');
+
+modal.addEventListener('touchstart', function(e){
+    startY = e.touches[0].clientY;
+    startX = e.touches[0].clientX;
+});
+
+modal.addEventListener('touchmove', function(e){
+    endY = e.touches[0].clientY;
+    endX = e.touches[0].clientX;
+});
+
+modal.addEventListener('touchend', function(){
+    const vertical = endY - startY;
+    const horizontal = endX - startX;
 
 </body>
 </html>
