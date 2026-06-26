@@ -1,455 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>HOOP CULTURE</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
-
-body{
-background:#0a0a0a;
-color:white;
-overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-min-height:100svh;
-background:
-linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070') center/cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:clamp(42px, 10vw, 80px);
-font-weight:800;
-letter-spacing:clamp(2px, 1vw, 5px);
-}
-
-.hero p{
-margin-top:15px;
-font-size:clamp(15px, 4vw, 18px);
-opacity:0.8;
-}
-
-/* SECTION */
-
-.section{
-padding:clamp(52px, 8vw, 80px) clamp(18px, 6vw, 70px);
-}
-
-.section h2{
-font-size:clamp(28px, 7vw, 38px);
-margin-bottom:40px;
-}
-
-.section-note{
-margin-top:-25px;
-margin-bottom:35px;
-max-width:760px;
-opacity:0.72;
-line-height:1.7;
-}
-
-.apparel-section{
-padding-top:100px;
-padding-bottom:100px;
-}
-
-.apparel-section .card{
-border:1px solid rgba(255,255,255,0.06);
-}
-
-.apparel-section .gallery img{
-background:#151515;
-height:clamp(230px, 52vw, 320px);
-object-fit:cover;
-}
-
-.apparel-section .info{
-min-height:220px;
-justify-content:space-between;
-}
-
-.apparel-section .buy{
-margin-top:auto;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
-gap:30px;
-}
-
-/* CARD */
-
-.card{
-background:#111;
-border-radius:18px;
-overflow:hidden;
-cursor:pointer;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 30px rgba(0,0,0,0.6);
-}
-
-/* GALLERY */
-
-.gallery{
-display:flex;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-scroll-behavior:smooth;
-}
-
-.gallery img{
-min-width:100%;
-height:clamp(230px, 52vw, 320px);
-object-fit:cover;
-}
-
-/* INFO */
-
-.info{
-padding:22px;
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.info h3{
-font-size:clamp(21px, 5vw, 26px);
-}
-
-.desc{
-opacity:0.7;
-line-height:1.6;
-font-size:14px;
-}
-
-.price{
-color:#00ff88;
-font-size:clamp(20px, 5vw, 24px);
-font-weight:bold;
-}
-
-.buy{
-margin-top:10px;
-background:#00ff88;
-padding:14px;
-border-radius:10px;
-text-align:center;
-color:black;
-font-weight:bold;
-transition:0.3s;
-}
-
-.buy:hover{
-background:white;
-}
-
-/* BENEFITS */
-
-.benefits{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
-gap:25px;
-margin-top:35px;
-}
-
-.benefit{
-background:#111;
-padding:30px;
-border-radius:15px;
-text-align:center;
-}
-
-/* PAGOS */
-
-.pagos{
-padding:clamp(45px, 8vw, 70px) clamp(18px, 6vw, 70px);
-text-align:center;
-}
-
-.pagos img{
-width:clamp(104px, 32vw, 140px);
-margin:15px;
-background:white;
-padding:12px;
-border-radius:12px;
-}
-
-/* FOOTER */
-
-footer{
-background:#000;
-padding:clamp(20px, 5vw, 35px);
-text-align:center;
-opacity:0.7;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat',sans-serif; }
+body { background:#0a0a0a; color:white; overflow-x:hidden; }
+.hero { min-height:100vh; min-height:100svh; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070') center/cover; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
+.hero h1 { font-size:clamp(42px, 10vw, 80px); font-weight:800; letter-spacing:clamp(2px, 1vw, 5px); }
+.hero p { margin-top:15px; font-size:clamp(15px, 4vw, 18px); opacity:0.8; }
+.section { padding:clamp(52px, 8vw, 80px) clamp(18px, 6vw, 70px); }
+.section h2 { font-size:clamp(28px, 7vw, 38px); margin-bottom:40px; }
+.section-note { margin-top:-25px; margin-bottom:35px; max-width:760px; opacity:0.72; line-height:1.7; }
+.apparel-section { padding-top:100px; padding-bottom:100px; }
+.apparel-section .card { border:1px solid rgba(255,255,255,0.06); }
+.apparel-section .gallery img { background:#151515; height:clamp(230px, 52vw, 320px); object-fit:cover; }
+.apparel-section .info { min-height:220px; justify-content:space-between; }
+.apparel-section .buy { margin-top:auto; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:30px; }
+.card { background:#111; border-radius:18px; overflow:hidden; cursor:pointer; transition:0.3s; }
+.card:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.6); }
+.gallery { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
+.gallery img { min-width:100%; height:clamp(230px, 52vw, 320px); object-fit:cover; }
+.info { padding:22px; display:flex; flex-direction:column; gap:12px; }
+.info h3 { font-size:clamp(21px, 5vw, 26px); }
+.desc { opacity:0.7; line-height:1.6; font-size:14px; }
+.price { color:#00ff88; font-size:clamp(20px, 5vw, 24px); font-weight:bold; }
+.buy { margin-top:10px; background:#00ff88; padding:14px; border-radius:10px; text-align:center; color:black; font-weight:bold; transition:0.3s; }
+.buy:hover { background:white; }
+footer { background:#000; padding:clamp(20px, 5vw, 35px); text-align:center; opacity:0.7; }
 
 /* MODAL */
-
-.modal{
-display:none;
-position:fixed;
-z-index:999;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.92);
-overflow:auto;
-padding:clamp(14px, 4vw, 40px);
-}
-
-.modal-content{
-background:#111;
-max-width:1200px;
-margin:auto;
-border-radius:20px;
-padding:clamp(20px, 5vw, 35px);
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-position:relative;
-}
-
-.close{
-position:absolute;
-top:15px;
-right:20px;
-font-size:45px;
-cursor:pointer;
-color:#fff;
-background:rgba(0,0,0,0.8);
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:1000;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-
-.modal-gallery img{
-width:100%;
-border-radius:18px;
-}
-
-.thumbs{
-display:flex;
-gap:10px;
-margin-top:15px;
-overflow-x:auto;
-}
-
-.thumbs img{
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:10px;
-cursor:pointer;
-padding:5px;
-background:#000;
-}
-
-.modal-info h1{
-font-size:clamp(32px, 9vw, 55px);
-}
-
-.modal-price{
-margin-top:20px;
-font-size:clamp(25px, 7vw, 35px);
-color:#00ff88;
-font-weight:bold;
-}
-
-.modal-desc{
-margin-top:20px;
-line-height:1.8;
-opacity:0.8;
-}
-
-.sizes{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-.sizes div{
-padding:14px 18px;
-background:#222;
-border-radius:10px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.sizes div:hover{
-background:#00ff88;
-color:black;
-}
-
-.sizes div.active{
-background:#00ff88;
-color:black;
-}
-
-.buy-modal{
-margin-top:35px;
-background:#00ff88;
-padding:18px;
-border-radius:12px;
-text-align:center;
-font-weight:bold;
-color:black;
-cursor:pointer;
-}
+.modal { display:none; position:fixed; z-index:999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.92); overflow:auto; padding:clamp(14px, 4vw, 40px); }
+.modal-content { background:#111; max-width:1200px; margin:auto; border-radius:20px; padding:clamp(20px, 5vw, 35px); display:grid; grid-template-columns:1fr 1fr; gap:50px; position:relative; }
+.close { position:absolute; top:15px; right:20px; font-size:45px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.8); width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1000; box-shadow:0 0 10px rgba(0,0,0,0.5); }
+.close:hover { background:rgba(0,0,0,0.95); }
+.modal-gallery img { width:100%; border-radius:18px; }
+.thumbs { display:flex; gap:10px; margin-top:15px; overflow-x:auto; }
+.thumbs img { width:90px; height:90px; object-fit:cover; border-radius:10px; cursor:pointer; padding:5px; background:#000; }
+.modal-info h1 { font-size:clamp(32px, 9vw, 55px); }
+.modal-price { margin-top:20px; font-size:clamp(25px, 7vw, 35px); color:#00ff88; font-weight:bold; }
+.modal-desc { margin-top:20px; line-height:1.8; opacity:0.8; }
+.sizes { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+.sizes div { padding:14px 18px; background:#222; border-radius:10px; cursor:pointer; transition:0.3s; }
+.sizes div:hover { background:#00ff88; color:black; }
+.sizes div.active { background:#00ff88; color:black; }
+.buy-modal { margin-top:35px; background:#00ff88; padding:18px; border-radius:12px; text-align:center; font-weight:bold; color:black; cursor:pointer; transition:0.3s; }
+.buy-modal:hover { background:white; }
 
 @media(max-width:900px){
-
-.hero{
-padding:24px 16px;
-}
-
-.section{
-padding:48px 18px;
-}
-
-.section-note{
-margin-top:-22px;
-font-size:14px;
-}
-
-.grid{
-gap:22px;
-}
-
-.modal-content{
-grid-template-columns:1fr;
-gap:24px;
-}
-
-.close{
-top:12px;
-right:12px;
-width:55px;
-height:55px;
-font-size:38px;
-background:rgba(0,0,0,0.9);
-color:#fff;
-}
-
+.hero { padding:24px 16px; }
+.section { padding:48px 18px; }
+.section-note { margin-top:-22px; font-size:14px; }
+.grid { gap:22px; }
+.modal-content { grid-template-columns:1fr; gap:24px; }
+.close { top:12px; right:12px; }
 }
 
 @media(max-width:520px){
-
-.hero{
-background-position:center top;
+.hero { background-position:center top; }
+.hero h1 { line-height:0.95; word-break:break-word; }
+.card { border-radius:14px; }
+.info { padding:18px; }
+.desc { font-size:13px; }
+.buy, .buy-modal { padding:13px; }
+.modal { padding:10px; }
+.modal-content { border-radius:16px; padding:18px; }
+.thumbs img { width:72px; height:72px; }
+.sizes { gap:9px; }
+.sizes div { padding:12px 14px; }
 }
-
-.hero h1{
-line-height:0.95;
-word-break:break-word;
-}
-
-.card{
-border-radius:14px;
-}
-
-.info{
-padding:18px;
-}
-
-.desc{
-font-size:13px;
-}
-
-.buy,
-.buy-modal{
-padding:13px;
-}
-
-.modal{
-padding:10px;
-}
-
-.modal-content{
-border-radius:16px;
-padding:18px;
-}
-
-.thumbs img{
-width:72px;
-height:72px;
-}
-
-.sizes{
-gap:9px;
-}
-
-.sizes div{
-padding:12px 14px;
-}
-
-.pagos img{
-margin:10px;
-}
-
-}
-
-@media(max-width:360px){
-
-.section{
-padding-left:14px;
-padding-right:14px;
-}
-
-.gallery img{
-height:220px;
-}
-
-.apparel-section .gallery img{
-height:220px;
-}
-
-.modal-gallery img{
-max-height:280px;
-object-fit:contain;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
 <div class="hero">
@@ -457,822 +81,120 @@ object-fit:contain;
 <p>Todo el estilo del básquet en un solo lugar</p>
 </div>
 
-<!-- ZAPATILLAS -->
-
 <div class="section">
-
 <h2>Zapatillas de Basket</h2>
-
 <div class="grid">
 
-<!-- KD 19 -->
-
-<div class="card" onclick="openModal(
-'KD 19',
-'S/ 639',
-'¿El mayor don de KD? Su resistencia. Las Slim Reaper nunca se cansan, ni en pasión por el juego ni en energía en los momentos decisivos. La combinación de amortiguación Air Zoom y Nike Air le proporciona una amortiguación reactiva excepcional. Además, hemos perforado la parte superior para reducir el peso y mejorar la transpirabilidad, para que pueda jugar todo el día.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d75d8065-2cd1-4d34-bf2f-89d30ba8515a/KD19.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8bb297cc-d3bf-4553-90e6-a999652a7257/KD19.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9d4dead0-1fe5-400e-aa95-2598d3340b89/KD19.png'
-],
-'zapatilla'
-)">
-
+<div class="card" onclick="openModal('KD 19','S/ 639','¿El mayor don de KD? Su resistencia. Las Slim Reaper nunca se cansan, ni en pasión por el juego ni en energía en los momentos decisivos.','https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d75d8065-2cd1-4d34-bf2f-89d30ba8515a/KD19.png','zapatilla')">
 <div class="gallery">
 <img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d75d8065-2cd1-4d34-bf2f-89d30ba8515a/KD19.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8bb297cc-d3bf-4553-90e6-a999652a7257/KD19.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9d4dead0-1fe5-400e-aa95-2598d3340b89/KD19.png">
 </div>
-
 <div class="info">
 <h3>KD 19</h3>
-<p class="desc">¿El mayor don de KD? Su resistencia. Las Slim Reaper nunca se cansan, ni en pasión por el juego ni en energía en los momentos decisivos. La combinación de amortiguación Air Zoom y Nike Air le proporciona una amortiguación reactiva excepcional. Además, hemos perforado la parte superior para reducir el peso y mejorar la transpirabilidad, para que pueda jugar todo el día.</p>
+<p class="desc">Nike Zoom Air Zoom y amortiguación de calidad</p>
 <p class="price">S/ 639</p>
 <div class="buy">Ver producto</div>
 </div>
-
 </div>
 
-<!-- JA 2 -->
-
-<div class="card" onclick="openModal(
-'JA 2',
-'S/ 429',
-'Ja se esfuerza al máximo para ser el mejor y así rendir al máximo cuando el partido está en juego. Por eso, le dimos a las Ja 2 un diseño más ligero. Incorporan la amortiguación Air Zoom para mantenerlo fresco en el laboratorio. Y la tracción inspirada en los neumáticos de tractor le ayuda a cambiar de dirección con facilidad. Ja es un apasionado del trabajo duro. ¿Y tú?',
-[
-'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png',
-'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png',
-'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png'
-],
-'zapatilla'
-)">
-
+<div class="card" onclick="openModal('JA 2','S/ 429','Ja se esfuerza al máximo para ser el mejor y así rendir al máximo cuando el partido está en juego.','https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png','zapatilla')">
 <div class="gallery">
 <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73d7c99a-68f5-42de-ba12-de61d6001c22/JA+2.png">
-<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a001f3f3-05be-4da1-9342-5ee97044d6a0/JA+2.png">
-<img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8754bba4-2ec6-456e-949f-4fce360ac8f5/JA+2.png">
 </div>
-
 <div class="info">
 <h3>JA 2</h3>
-<p class="desc">Ja se esfuerza al máximo para ser el mejor y así rendir al máximo cuando el partido está en juego. Por eso, le dimos a las Ja 2 un diseño más ligero. Incorporan la amortiguación Air Zoom para mantenerlo fresco en el laboratorio. Y la tracción inspirada en los neumáticos de tractor le ayuda a cambiar de dirección con facilidad. Ja es un apasionado del trabajo duro. ¿Y tú?</p>
+<p class="desc">Diseño ligero y amortiguación Air Zoom</p>
 <p class="price">S/ 429</p>
 <div class="buy">Ver producto</div>
 </div>
-
-</div>
-
-<!-- CURRY -->
-
-<div class="card" onclick="openModal(
-'Curry 3Z 24 ',
-'S/ 399',
-'Diseñado para permitirte jugar en cualquier lugar, desde madera dura hasta asfalto, el Curry Splash 24 acaba de recibir un brillo de gamuza. Con una suela de goma duradera y superposiciones resistentes a la abrasión, estos zapatos de streetball son lo suficientemente resistentes como para dominar cualquier cancha.',
-[
-'https://underarmour.scene7.com/is/image/Underarmour/3027626-101_PAIR?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0',
-'https://underarmour.scene7.com/is/image/Underarmour/3027626-101_TOE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0',
-'https://underarmour.scene7.com/is/image/Underarmour/3027626-101_SOLE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/3027626-101_PAIR?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/3027626-101_TOE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/3027626-101_SOLE?rp=standard-30pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&size=770%2C970&op_usm=1.75%2C0.3%2C2%2C0">
-</div>
-
-<div class="info">
-<h3>Curry 3Z 24 </h3>
-<p class="desc">Diseñado para permitirte jugar en cualquier lugar, desde madera dura hasta asfalto, el Curry Splash 24 acaba de recibir un brillo de gamuza. Con una suela de goma duradera y superposiciones resistentes a la abrasión, estos zapatos de streetball son lo suficientemente resistentes como para dominar cualquier cancha.
-</p>
-<p class="price">S/ 399</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- BELIEVE -->
-
-<div class="card" onclick="openModal(
-'BELIEVE THAT 1',
-'S/ 499',
-'Diseñadas para baloncesto tanto en interiores como en exteriores, las zapatillas Believe That 1 son para quienes buscan rendimiento y estilo. Inspiradas en el espíritu audaz de Anthony Edwards, te ayudan a entrar a la cancha con confianza. La amortiguación Dreamstrike integrada combina una sujeción suave y estable, brindándote comodidad en cada salto y giro',
-[
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/88e93aa9a7da42628b8204e0210d1b03_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_09_standard.jpg',
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c667fda4fff84dd184ebdaa93ba4e02d_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_03_standard.jpg',
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/16e88f5397c541f485756b4e81e64bba_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_41_detail.jpg'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/88e93aa9a7da42628b8204e0210d1b03_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_09_standard.jpg">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c667fda4fff84dd184ebdaa93ba4e02d_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_03_standard.jpg">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/16e88f5397c541f485756b4e81e64bba_9366/BELIEVE_THAT_1_Shoes_Grey_KJ3146_41_detail.jpg">
-</div>
-
-<div class="info">
-<h3>BELIEVE THAT 1</h3>
-<p class="desc">Diseñadas para baloncesto tanto en interiores como en exteriores, las zapatillas Believe That 1 son para quienes buscan rendimiento y estilo. Inspiradas en el espíritu audaz de Anthony Edwards, te ayudan a entrar a la cancha con confianza. La amortiguación Dreamstrike integrada combina una sujeción suave y estable, brindándote comodidad en cada salto y giro</p>
-<p class="price">S/ 499</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-
-<!-- AG 6 -->
-
-<div class="card" onclick="openModal(
-'AG 6 &quot;AG Ion&quot;',
-'S/ 489',
-'Las últimas zapatillas exclusivas de Aaron Gordon. La suela de goma Diamond Grip garantiza paradas precisas y un excelente desempeño en toda la cancha. Las zonas de rebote Soaring Area mejoran el despegue explosivo. La mediasuela C-Flow ofrece una amortiguación superior y reduce el impacto en las rodillas. El TPU 3D antitorsión proporciona máxima estabilidad.',
-[
-'https://361sport.com/cdn/shop/files/AG6AGIon_2_9e3d19f8-281c-46cc-ad90-ded68dba4791.jpg?v=1769420089&width=600',
-'https://361sport.com/cdn/shop/files/AG6AGIon_6_1a4fc6a7-61f8-4790-b466-c9932dab9504.jpg?v=1769420089&width=600',
-'https://361sport.com/cdn/shop/files/AG6AGIon_3_08bbab53-e56b-4e09-ae7f-0f2dc77ea8e3.jpg?v=1769420089&width=600'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://361sport.com/cdn/shop/files/AG6AGIon_2_9e3d19f8-281c-46cc-ad90-ded68dba4791.jpg?v=1769420089&width=600" alt="AG 6 AG Ion vista lateral">
-<img src="https://361sport.com/cdn/shop/files/AG6AGIon_6_1a4fc6a7-61f8-4790-b466-c9932dab9504.jpg?v=1769420089&width=600" alt="AG 6 AG Ion vista superior">
-<img src="https://361sport.com/cdn/shop/files/AG6AGIon_3_08bbab53-e56b-4e09-ae7f-0f2dc77ea8e3.jpg?v=1769420089&width=600" alt="AG 6 AG Ion detalle">
-</div>
-
-<div class="info">
-<h3>AG 6 "AG Ion"</h3>
-<p class="desc">Las últimas zapatillas exclusivas de Aaron Gordon. La suela de goma Diamond Grip garantiza paradas precisas y un excelente desempeño en toda la cancha. Las zonas de rebote Soaring Area mejoran el despegue explosivo. La mediasuela C-Flow ofrece una amortiguación superior y reduce el impacto en las rodillas. El TPU 3D antitorsión proporciona máxima estabilidad.</p>
-<p class="price">S/ 489</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-
-<!-- Rigorer AR2  -->
-
-<div class="card" onclick="openModal(
-'Rigorer AR2 ',
-'S/ 410',
-'Las Rigorer AR 2 son las segundas zapatillas exclusivas del jugador de la NBA Austin Reaves. Diseñadas para un alto rendimiento en la cancha, destacan por ofrecer una gran mejora en estabilidad y amortiguación respecto a la primera generación.',
-[
-'https://rigorer.com/cdn/shop/files/3_0e368cfb-f42e-482e-88a3-7990d492b176.jpg?v=1755056171&width=700',
-'https://rigorer.com/cdn/shop/files/5_f45c8033-313e-41ff-92a2-f20cb0d1105f.jpg?v=1755056171&width=700',
-'https://rigorer.com/cdn/shop/files/6_fc736a69-f457-43da-8022-b15af7e9b3d8.jpg?v=1755056171&width=700'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://rigorer.com/cdn/shop/files/3_0e368cfb-f42e-482e-88a3-7990d492b176.jpg?v=1755056171&width=700">
-<img src="https://rigorer.com/cdn/shop/files/5_f45c8033-313e-41ff-92a2-f20cb0d1105f.jpg?v=1755056171&width=700">
-<img src="https://rigorer.com/cdn/shop/files/6_fc736a69-f457-43da-8022-b15af7e9b3d8.jpg?v=1755056171&width=700">
-</div>
-
-<div class="info">
-<h3>Rigorer AR2 </h3>
-<p class="desc">Las Rigorer AR 2 son las segundas zapatillas exclusivas del jugador de la NBA Austin Reaves. Diseñadas para un alto rendimiento en la cancha, destacan por ofrecer una gran mejora en estabilidad y amortiguación respecto a la primera generación.</p>
-<p class="price">S/ 410</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- Luka 77 -->
-
-<div class="card" onclick="openModal(
-'Luka 77',
-'S/ 499',
-'Las Luka 77 están hechas para ayudarte a dominar en canchas exteriores exigentes. Esta vez, una llamativa combinación de colores le da un toque de intensidad a tu estilo con capas de rojo y un toque neutro. La malla de alta resistencia a la abrasión y la suela de goma duradera resisten el hormigón y el asfalto. La amortiguación Air Zoom de gran respuesta y la espuma de doble densidad te mantienen cómodo, para que estés listo para cualquier desafío.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/03e9c467-fc01-4646-a4f7-13f7a5d3daba/JORDAN+LUKA+77.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6cd25cfb-f688-4910-b440-e9961697eb86/JORDAN+LUKA+77.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8e906965-d415-417f-9d3f-1457709d4b4b/JORDAN+LUKA+77.png'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/03e9c467-fc01-4646-a4f7-13f7a5d3daba/JORDAN+LUKA+77.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6cd25cfb-f688-4910-b440-e9961697eb86/JORDAN+LUKA+77.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8e906965-d415-417f-9d3f-1457709d4b4b/JORDAN+LUKA+77.png">
-</div>
-
-<div class="info">
-<h3>Luka 77</h3>
-<p class="desc">Las Luka 77 están hechas para ayudarte a dominar en canchas exteriores exigentes. Esta vez, una llamativa combinación de colores le da un toque de intensidad a tu estilo con capas de rojo y un toque neutro. La malla de alta resistencia a la abrasión y la suela de goma duradera resisten el hormigón y el asfalto. La amortiguación Air Zoom de gran respuesta y la espuma de doble densidad te mantienen cómodo, para que estés listo para cualquier desafío.</p>
-<p class="price">S/ 499</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- Giannis Immortality 4 -->
-
-<div class="card" onclick="openModal(
-'Giannis Immortality 4',
-'S/ 389',
-'Las Giannis Immortality 4 están diseñadas para el jugador polifacético. Su elegante diseño con buen soporte en el talón, combinado con un patrón de tracción mejorado respecto a la versión anterior, te ayudará a realizar jugadas decisivas.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5e6de271-f28b-4fa6-bcef-6fb2e0c5c788/GIANNIS+IMMORTALITY+4.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a58e25a2-1953-4157-a06e-dbe2256f3b34/GIANNIS+IMMORTALITY+4.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/950f75e5-1ae5-40bb-ae2d-5b16acf53f8a/GIANNIS+IMMORTALITY+4.png'
-],
-'zapatilla'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5e6de271-f28b-4fa6-bcef-6fb2e0c5c788/GIANNIS+IMMORTALITY+4.png" alt="Giannis Immortality 4 vista lateral">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a58e25a2-1953-4157-a06e-dbe2256f3b34/GIANNIS+IMMORTALITY+4.png" alt="Giannis Immortality 4 vista superior">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/950f75e5-1ae5-40bb-ae2d-5b16acf53f8a/GIANNIS+IMMORTALITY+4.png" alt="Giannis Immortality 4 detalle">
-</div>
-
-<div class="info">
-<h3>Giannis Immortality 4</h3>
-<p class="desc">Las Giannis Immortality 4 están diseñadas para el jugador polifacético. Su elegante diseño con buen soporte en el talón, combinado con un patrón de tracción mejorado respecto a la versión anterior, te ayudará a realizar jugadas decisivas.</p>
-<p class="price">S/ 389</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- KIDS -->
-
-<div class="section">
-
-<h2>Kids</h2>
-<p class="section-note">Zapatillas de basket para niños: modelos cómodos, resistentes y ligeros para pequeños jugadores.</p>
-
-<div class="grid">
-
-<!-- Ja 3 -->
-
-<div class="card" onclick="openModal(
-'Ja 3',
-'S/ 469',
-'Cada vez que Ja pisa la cancha, es un espectáculo. Para potenciar su juego, trabajamos con él para crear su zapatilla de autor con mayor capacidad de rebote hasta la fecha. La Ja 3 es ligera, resistente y revolucionaria gracias a su espuma ZoomX de gran elasticidad.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/04e3f673-931c-41a9-a93c-768e4ca03463/JA+3+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/63c2f7ac-9a81-4df3-9233-647a45bc6baa/JA+3+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/27df0f09-3a95-48fa-b25d-0d570a635352/JA+3+%28GS%29.png'
-],
-'kids'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/04e3f673-931c-41a9-a93c-768e4ca03463/JA+3+%28GS%29.png" alt="Ja 3 Kids vista lateral">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/63c2f7ac-9a81-4df3-9233-647a45bc6baa/JA+3+%28GS%29.png" alt="Ja 3 Kids vista superior">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/27df0f09-3a95-48fa-b25d-0d570a635352/JA+3+%28GS%29.png" alt="Ja 3 Kids detalle">
-</div>
-
-<div class="info">
-<h3>Ja 3</h3>
-<p class="desc">Zapatilla ligera, resistente y explosiva para pequeños jugadores con juego rápido.</p>
-<p class="price">S/ 469</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- Sabrina 3 -->
-
-<div class="card" onclick="openModal(
-'Sabrina 3',
-'S/ 389',
-'La búsqueda de la excelencia de Sabrina Ionescu requiere un calzado que esté a la altura. La Sabrina 3 tiene parte superior ligera y cables de sujeción para moverse, deslizarse y retroceder con confianza.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cde97f00-d952-4a3e-a6ab-c7c144144bba/SABRINA+3+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/1e529a0b-b27c-433f-b1e6-94ac21bd754c/SABRINA+3+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0c89dfc3-0521-4ca1-9e50-3947533d14f7/SABRINA+3+%28GS%29.png'
-],
-'kids'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cde97f00-d952-4a3e-a6ab-c7c144144bba/SABRINA+3+%28GS%29.png" alt="Sabrina 3 Kids vista lateral">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/1e529a0b-b27c-433f-b1e6-94ac21bd754c/SABRINA+3+%28GS%29.png" alt="Sabrina 3 Kids vista superior">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0c89dfc3-0521-4ca1-9e50-3947533d14f7/SABRINA+3+%28GS%29.png" alt="Sabrina 3 Kids detalle">
-</div>
-
-<div class="info">
-<h3>Sabrina 3</h3>
-<p class="desc">Parte superior ligera y sujeción segura para movimientos rápidos.</p>
-<p class="price">S/ 389</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- Nike ST Dynamite -->
-
-<div class="card" onclick="openModal(
-'Nike ST Dynamite',
-'S/ 329',
-'Irrumpe en la cancha con estilo gracias a las ST Dynamite. Diseñadas para movilidad sin esfuerzo en madera y asfalto, con suela de gran agarre y parte superior de malla transpirable.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7ee83fc9-0b60-41e8-89df-7ac23f4b7587/NIKE+S.T.+DYNAMITE+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/49ded1e7-5c87-4cf5-830b-45b73b76ee4b/NIKE+S.T.+DYNAMITE+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfb88002-0911-4420-9f9e-a1fd9751f771/NIKE+S.T.+DYNAMITE+%28GS%29.png'
-],
-'kids'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7ee83fc9-0b60-41e8-89df-7ac23f4b7587/NIKE+S.T.+DYNAMITE+%28GS%29.png" alt="Nike ST Dynamite Kids vista lateral">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/49ded1e7-5c87-4cf5-830b-45b73b76ee4b/NIKE+S.T.+DYNAMITE+%28GS%29.png" alt="Nike ST Dynamite Kids vista superior">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfb88002-0911-4420-9f9e-a1fd9751f771/NIKE+S.T.+DYNAMITE+%28GS%29.png" alt="Nike ST Dynamite Kids detalle">
-</div>
-
-<div class="info">
-<h3>Nike ST Dynamite</h3>
-<p class="desc">Movilidad, agarre y malla transpirable para jugar en cancha o asfalto.</p>
-<p class="price">S/ 329</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- Giannis Immortality 4  -->
-
-<div class="card" onclick="openModal(
-'Giannis Immortality 4',
-'S/ 409',
-'Giannis marca la diferencia en cualquier posición. Con tracción excepcional, dos capas de espuma elástica y parte superior ligera, estas zapatillas ayudan a mantener la frescura en partidos intensos.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e747ed2c-1a1d-4206-88b5-b42cca388f6d/GIANNIS+IMMORTALITY+4+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/72305aa9-1af9-42f7-b65f-759f69ab22c4/GIANNIS+IMMORTALITY+4+%28GS%29.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0f410a5e-7ea8-4691-b4a3-bcf848c36734/GIANNIS+IMMORTALITY+4+%28GS%29.png'
-],
-'kids'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e747ed2c-1a1d-4206-88b5-b42cca388f6d/GIANNIS+IMMORTALITY+4+%28GS%29.png" alt="Giannis Immortality 4 Kids vista lateral">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/72305aa9-1af9-42f7-b65f-759f69ab22c4/GIANNIS+IMMORTALITY+4+%28GS%29.png" alt="Giannis Immortality 4 Kids vista superior">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0f410a5e-7ea8-4691-b4a3-bcf848c36734/GIANNIS+IMMORTALITY+4+%28GS%29.png" alt="Giannis Immortality 4 Kids detalle">
-</div>
-
-<div class="info">
-<h3>Giannis Immortality 4</h3>
-<p class="desc">Tracción excepcional, espuma elástica y parte superior ligera para jugar con intensidad.</p>
-<p class="price">S/ 409</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-<!-- BELIEVE THAT 1  -->
-
-<div class="card" onclick="openModal(
-'BELIEVE THAT 1 ',
-'S/ 409',
-'Inspiradas en la energía y determinación de los mejores atletas de baloncesto, combinan estilo, rendimiento y comodidad. La tecnología Dreamstrike ofrece amortiguación suave y estable.',
-[
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/42158ef80f564e5aa967d9f3d380b0f2_9366/BELIEVE_THAT_1_J_Shoes_White_KJ3333_09_standard.jpg',
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/d3eff0ead17d495183aa33831f4c6167_9366/BELIEVE_THAT_1_J_Shoes_White_KJ3333_05_standard.jpg',
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/03738f4707dc46d79d3536a89a2e7ee2_9366/BELIEVE_THAT_1_J_Shoes_White_KJ3333_03_standard.jpg'
-],
-'kids'
-)">
-
-<div class="gallery">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/42158ef80f564e5aa967d9f3d380b0f2_9366/BELIEVE_THAT_1_J_Shoes_White_KJ3333_09_standard.jpg" alt="BELIEVE THAT 1 Kids vista lateral">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/d3eff0ead17d495183aa33831f4c6167_9366/BELIEVE_THAT_1_J_Shoes_White_KJ3333_05_standard.jpg" alt="BELIEVE THAT 1 Kids detalle">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/03738f4707dc46d79d3536a89a2e7ee2_9366/BELIEVE_THAT_1_J_Shoes_White_KJ3333_03_standard.jpg" alt="BELIEVE THAT 1 Kids superior">
-</div>
-
-<div class="info">
-<h3>BELIEVE THAT 1</h3>
-<p class="desc">Estilo, rendimiento y comodidad con amortiguación Dreamstrike.</p>
-<p class="price">S/ 409</p>
-<div class="buy">Ver producto</div>
-</div>
-
 </div>
 
-<!-- Dame X -->
-
-<div class="card" onclick="openModal(
-'Dame X ',
-'S/ 369',
-'Las Dame X, diseñadas para que Dame sea Dame, ofrecen una parte superior de tejido ligero, transpirabilidad y detalles impresos en 3D para soporte donde más se necesita.',
-[
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd6f3970629f4b6e9bebf9c02e9e9177_9366/Dame_X_Shoes_Kids_Blue_KJ7095_09_standard.jpg',
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7539daeaafbd41cab4dba72f8d78ccf0_9366/Dame_X_Shoes_Kids_Blue_KJ7095_05_standard.jpg',
-'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e41b408688ba499d8c0177af00d9e0ec_9366/Dame_X_Shoes_Kids_Blue_KJ7095_03_standard.jpg'
-],
-'kids'
-)">
-
-<div class="gallery">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd6f3970629f4b6e9bebf9c02e9e9177_9366/Dame_X_Shoes_Kids_Blue_KJ7095_09_standard.jpg" alt="Dame X Kids vista lateral">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7539daeaafbd41cab4dba72f8d78ccf0_9366/Dame_X_Shoes_Kids_Blue_KJ7095_05_standard.jpg" alt="Dame X Kids detalle">
-<img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e41b408688ba499d8c0177af00d9e0ec_9366/Dame_X_Shoes_Kids_Blue_KJ7095_03_standard.jpg" alt="Dame X Kids superior">
-</div>
-
-<div class="info">
-<h3>Dame X</h3>
-<p class="desc">Tejido ligero, transpirabilidad y soporte para dominar cada jugada.</p>
-<p class="price">S/ 369</p>
-<div class="buy">Ver producto</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- ROPA -->
-
-<div class="section apparel-section">
-
-<h2>Ropa Basket</h2>
-<p class="section-note">Usa lo mejor de la cancha y crea tu estilo propio fuera de ella.</p>
-
-<div class="grid">
-
-
-<!-- 2 rodilleras para basket -->
-
-<div class="card" onclick="openModal(
-'2 rodilleras para basket',
-'S/ 80',
-'Equipo de protección deportivo con manga de compresión acolchada para rodilla y pantorrilla',
-[
-'https://ae-pic-a1.aliexpress-media.com/kf/Sb9da4d385a4e45e69e7cd6cc9d4febb3y.jpg_220x220q75.jpg_.avif',
-'https://ae-pic-a1.aliexpress-media.com/kf/S3d50259255e04081977e977cc4154ca5r.jpg_220x220q75.jpg_.avif',
-'https://ae-pic-a1.aliexpress-media.com/kf/S0598de9d2c9c46738de4161bb07a88e17.jpg_220x220q75.jpg_.avif'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb9da4d385a4e45e69e7cd6cc9d4febb3y.jpg_220x220q75.jpg_.avif">
-<img src="https://ae-pic-a1.aliexpress-media.com/kf/S3d50259255e04081977e977cc4154ca5r.jpg_220x220q75.jpg_.avif">
-<img src="https://ae-pic-a1.aliexpress-media.com/kf/S0598de9d2c9c46738de4161bb07a88e17.jpg_220x220q75.jpg_.avif">
-</div>
-
-<div class="info">
-<h3>2 rodilleras para basket</h3>
-<p class="desc">Equipo de protección deportivo con manga de compresión acolchada para rodilla y pantorrilla</p>
-<p class="price">S/ 80</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-<!-- One Leg Sleeve -->
-
-<div class="card" onclick="openModal(
-'One Leg Sleeve',
-'S/ 249',
-'Diseñados para entrenar en climas cálidos, estos leggings de compresión de una sola pierna izquierda para hombre te mantienen fresco con HeatGear® superligero y secado rápido. Llévalo como capa base, solo o debajo del uniforme. La cintura ancha se mantiene en su sitio y el Strength Pocket™ asegura lo esencial.',
-[
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012358-001_FC?rp=standard-0pad%7CpdpMainDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=f0f0f0&wid=1836&hei=1950&size=1500%2C1500',
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012358-001_BC?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708',
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012358-001_FSF?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012358-001_FC?rp=standard-0pad%7CpdpMainDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=f0f0f0&wid=1836&hei=1950&size=1500%2C1500">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012358-001_BC?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012358-001_FSF?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708">
-</div>
-
-<div class="info">
-<h3>One Leg Sleeve</h3>
-<p class="desc">Diseñados para entrenar en climas cálidos, estos leggings de compresión de una sola pierna izquierda para hombre te mantienen fresco con HeatGear® superligero y secado rápido. Llévalo como capa base, solo o debajo del uniforme. La cintura ancha se mantiene en su sitio y el Strength Pocket™ asegura lo esencial.</p>
-<p class="price">S/ 249</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-
-<!-- LeBron Basketball Shorts -->
-
-<div class="card" onclick="openModal(
-'LeBron Basketball Shorts',
-'S/ 349',
-'Celebra el reinado de LeBron con estos pantalones cortos de baloncesto de 20 cm. Dos capas de malla estructurada le dan un toque de alta calidad, y la etiqueta &quot;Forever King&quot; rinde homenaje a su dominio indiscutible en la cancha.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/3d8456db-4b11-472d-a19b-191009f374a2/LJ+M+NK+8IN+SHORT.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/cfbe3d80-35b4-4c51-8b80-9914f23e69ca/LJ+M+NK+8IN+SHORT.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/e921c9d6-6834-4ca9-95e6-755269b38f5c/LJ+M+NK+8IN+SHORT.png'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/3d8456db-4b11-472d-a19b-191009f374a2/LJ+M+NK+8IN+SHORT.png" alt="LeBron Basketball Shorts frontal">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/cfbe3d80-35b4-4c51-8b80-9914f23e69ca/LJ+M+NK+8IN+SHORT.png" alt="LeBron Basketball Shorts detalle">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/e921c9d6-6834-4ca9-95e6-755269b38f5c/LJ+M+NK+8IN+SHORT.png" alt="LeBron Basketball Shorts posterior">
-</div>
-
-<div class="info">
-<h3>LeBron Basketball Shorts</h3>
-<p class="desc">Celebra el reinado de LeBron con estos pantalones cortos de baloncesto de 20 cm. Dos capas de malla estructurada le dan un toque de alta calidad, y la etiqueta &quot;Forever King&quot; rinde homenaje a su dominio indiscutible en la cancha.</p>
-<p class="price">S/ 349</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-<!-- Jordan Dri-FIT Shorts -->
-
-<div class="card" onclick="openModal(
-'Jordan Dri-FIT Shorts',
-'S/ 279',
-'La malla ligera y nuestra tecnología de absorción del sudor te ayudan a mantenerte fresco cuando el partido se pone intenso. ¿Y ese distintivo ribete en forma de diamante? Es la guinda del pastel.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/42146599-10c0-4558-97df-ad471142e28d/M+J+DF+SPT+MESH+GFX+SHORT.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/34e2e240-7975-4869-a756-731f46b9892c/M+J+DF+SPT+MESH+GFX+SHORT.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/00cff093-ca91-47d2-abfe-9b5c53a2ecd8/M+J+DF+SPT+MESH+GFX+SHORT.png'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/42146599-10c0-4558-97df-ad471142e28d/M+J+DF+SPT+MESH+GFX+SHORT.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/34e2e240-7975-4869-a756-731f46b9892c/M+J+DF+SPT+MESH+GFX+SHORT.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/00cff093-ca91-47d2-abfe-9b5c53a2ecd8/M+J+DF+SPT+MESH+GFX+SHORT.png">
-</div>
-
-<div class="info">
-<h3>Jordan Dri-FIT Shorts</h3>
-<p class="desc">La malla ligera y nuestra tecnología de absorción del sudor te ayudan a mantenerte fresco cuando el partido se pone intenso. ¿Y ese distintivo ribete en forma de diamante? Es la guinda del pastel.</p>
-<p class="price">S/ 279</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-<!-- Jordan Sport -->
-
-<div class="card" onclick="openModal(
-'Jordan Sport',
-'S/ 349',
-'La malla ligera y nuestra tecnología de absorción del sudor te ayudan a mantenerte fresco cuando el partido se pone intenso. ¿Y ese distintivo ribete en forma de diamante? Es la guinda del pastel.',
-[
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c10f012c-9cf5-4d36-b6dc-036105a6a96d/M+J+DF+SPT+9%22+DMND+SHORT.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/382be1b7-ca42-4c36-8b28-5d774082adf2/M+J+DF+SPT+9%22+DMND+SHORT.png',
-'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/eb56fddc-9274-4923-9086-d423fa406e8c/M+J+DF+SPT+9%22+DMND+SHORT.png'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c10f012c-9cf5-4d36-b6dc-036105a6a96d/M+J+DF+SPT+9%22+DMND+SHORT.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/382be1b7-ca42-4c36-8b28-5d774082adf2/M+J+DF+SPT+9%22+DMND+SHORT.png">
-<img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/eb56fddc-9274-4923-9086-d423fa406e8c/M+J+DF+SPT+9%22+DMND+SHORT.png">
-</div>
-
-<div class="info">
-<h3>Jordan Sport</h3>
-<p class="desc">La malla ligera y nuestra tecnología de absorción del sudor te ayudan a mantenerte fresco cuando el partido se pone intenso. ¿Y ese distintivo ribete en forma de diamante? Es la guinda del pastel.</p>
-<p class="price">S/ 349</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-<!-- Short Curry Splash -->
-
-<div class="card" onclick="openModal(
-'Short Curry Splash',
-'S/ 279',
-'Todo lo que ponga mi nombre tiene que ser bueno: tiene que ayudarte a jugar y tiene que respaldar nuestra misión de cambiar el juego para siempre. – Stephen Curry',
-[
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_FSF?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0',
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_PKT?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0',
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_BC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_FSF?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_PKT?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_BC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0">
-</div>
-
-<div class="info">
-<h3>Short Curry Splash</h3>
-<p class="desc">Todo lo que ponga mi nombre tiene que ser bueno: tiene que ayudarte a jugar y tiene que respaldar nuestra misión de cambiar el juego para siempre. – Stephen Curry</p>
-<p class="price">S/ 279</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-
-<!-- Curry Logo MG -->
-
-<div class="card" onclick="openModal(
-'Curry Logo MG',
-'S/ 189',
-'“Todo a lo que le pongo mi nombre tiene que ser bueno, ayudar a jugar y apoyar nuestra misión de cambiar el juego para siempre”. – Stephen Curry',
-[
-'https://underarmour.scene7.com/is/image/Underarmour/PS6011261-400_HF?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708',
-'https://underarmour.scene7.com/is/image/Underarmour/PS6011261-400_HB?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708',
-'https://underarmour.scene7.com/is/image/Underarmour/PS6011261-400_HS?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/PS6011261-400_HF?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/PS6011261-400_HB?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/PS6011261-400_HS?rp=standard-0pad%7CpdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on%2Con&bgc=F0F0F0&wid=566&hei=708&size=566%2C708">
-</div>
-
-<div class="info">
-<h3>Curry Logo MG</h3>
-<p class="desc">“Todo a lo que le pongo mi nombre tiene que ser bueno, ayudar a jugar y apoyar nuestra misión de cambiar el juego para siempre”. – Stephen Curry</p>
-<p class="price">S/ 189</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-<!-- Curry Signature -->
-
-<div class="card" onclick="openModal(
-'Curry Signature',
-'S/ 199',
-'“Todo a lo que le pongo mi nombre tiene que ser bueno, ayudar a jugar y apoyar nuestra misión de cambiar el juego para siempre”. – Stephen Curry',
-[
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_BC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0',
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6016229-426_FC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0',
-'https://underarmour.scene7.com/is/image/Underarmour/V5-6016229-426_BC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0'
-],
-'ropa'
-)">
-
-<div class="gallery">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6012937-100_BC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6016229-426_FC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0">
-<img src="https://underarmour.scene7.com/is/image/Underarmour/V5-6016229-426_BC?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=800&hei=1000&op_usm=1.75%2C0.3%2C2%2C0">
-</div>
-
-<div class="info">
-<h3>Curry Signature</h3>
-<p class="desc">“Todo a lo que le pongo mi nombre tiene que ser bueno, ayudar a jugar y apoyar nuestra misión de cambiar el juego para siempre”. – Stephen Curry</p>
-<p class="price">S/ 199</p>
-<div class="buy">Comprar</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- BENEFICIOS -->
-
-<div class="section">
-
-<h2>¿Por qué comprar aquí?</h2>
-
-<div class="benefits">
-
-<div class="benefit">🚚 Envíos rápidos</div>
-<div class="benefit">💳 Pago con Yape y Plin</div>
-<div class="benefit">🔥 Productos exclusivos</div>
-<div class="benefit">⭐ Calidad garantizada</div>
-
-</div>
-
 </div>
-
-<!-- PAGOS -->
-
-<div class="pagos">
-
-<h2>Métodos de pago</h2>
-
-<img src="https://marketingperu.beglobal.biz/wp-content/uploads/2025/01/logo-yape-color-negro.png">
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xzQhxlNcvYgeM85r6_2UawHbzCfHE7x0Aw&s">
-
 </div>
 
 <footer>
-<p>© 2026 HOOP CULTURE</p>
+<p>&copy; 2024 HOOP CULTURE. Todos los derechos reservados.</p>
 </footer>
 
-<!-- MODAL -->
-
-<div class="modal" id="productModal">
-
+<!-- MODAL PARA COMPRA -->
+<div id="productModal" class="modal">
 <div class="modal-content">
-
 <span class="close" onclick="closeModal()">&times;</span>
-
 <div class="modal-gallery">
-<img id="mainImage">
+<img id="mainImage" src="" alt="Producto Principal">
 <div class="thumbs" id="thumbsContainer"></div>
 </div>
-
 <div class="modal-info">
-
 <h1 id="modalTitle"></h1>
-
 <p class="modal-price" id="modalPrice"></p>
-
 <p class="modal-desc" id="modalDesc"></p>
-
 <div class="sizes" id="sizesContainer"></div>
-
-<div class="buy-modal" onclick="buyWhatsApp()">
-Comprar ahora
-</div>
-
+<button class="buy-modal" onclick="buyWhatsApp()">Comprar por WhatsApp</button>
 </div>
 </div>
 </div>
 
 <script>
-
 let selectedSize = "";
+let currentProduct = {};
 
-function openModal(title,price,desc,images,type){
-document.getElementById("productModal").style.display="block";
-document.getElementById("modalTitle").innerText=title;
-document.getElementById("modalPrice").innerText=price;
-document.getElementById("modalDesc").innerText=desc;
-document.getElementById("mainImage").src=images[0];
-selectedSize = "";
-document.querySelectorAll(".sizes div").forEach(size => { size.classList.remove("active"); });
-let thumbs='';
-images.forEach(img => { thumbs += `<img src="${img}" onclick="changeImage('${img}')">`; });
-document.getElementById("thumbsContainer").innerHTML=thumbs;
-let sizesHTML = "";
-if(type === "ropa"){
-sizesHTML = `<div onclick="selectSize(this)">S</div><div onclick="selectSize(this)">M</div><div onclick="selectSize(this)">L</div><div onclick="selectSize(this)">XL</div>`;
-}else if(type === "kids"){
-sizesHTML = `<div onclick="selectSize(this)">36</div><div onclick="selectSize(this)">36.5</div><div onclick="selectSize(this)">37.5</div><div onclick="selectSize(this)">38</div><div onclick="selectSize(this)">38.5</div><div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div>`;
-}else{
-sizesHTML = `<div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div><div onclick="selectSize(this)">41</div><div onclick="selectSize(this)">42</div><div onclick="selectSize(this)">43</div>`;
-}
-document.getElementById("sizesContainer").innerHTML = sizesHTML;
-}
-function closeModal(){ document.getElementById("productModal").style.display="none"; }
-function changeImage(img){ document.getElementById("mainImage").src=img; }
-function selectSize(element){ document.querySelectorAll(".sizes div").forEach(size => { size.classList.remove("active"); }); element.classList.add("active"); selectedSize = element.innerText; }
-function buyWhatsApp(){
-if(selectedSize===""){ alert("Selecciona una talla"); return; }
-let product = document.getElementById("modalTitle").innerText;
-let price = document.getElementById("modalPrice").innerText;
-let message = `Hola, quiero comprar:\n\n🏀 Producto: ${product}\n📏 Talla: ${selectedSize}\n💰 Precio: ${price}`;
-let phone = "970004135";
-let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-window.open(url,"_blank");
+function openModal(title, price, description, mainImage, type) {
+  currentProduct = { title, price, type };
+  
+  document.getElementById('productModal').style.display = 'block';
+  document.getElementById('modalTitle').innerText = title;
+  document.getElementById('modalPrice').innerText = price;
+  document.getElementById('modalDesc').innerText = description;
+  document.getElementById('mainImage').src = mainImage;
+  selectedSize = "";
+  
+  // Reset tamaños
+  document.querySelectorAll('.sizes div').forEach(size => { size.classList.remove('active'); });
+  
+  // Crear thumbnails
+  let thumbsHTML = `<img src="${mainImage}" onclick="document.getElementById('mainImage').src='${mainImage}'" style="cursor:pointer;">`;
+  document.getElementById('thumbsContainer').innerHTML = thumbsHTML;
+  
+  // Crear tamaños según tipo
+  let sizesHTML = "";
+  if (type === "ropa") {
+    sizesHTML = `<div onclick="selectSize(this)">S</div><div onclick="selectSize(this)">M</div><div onclick="selectSize(this)">L</div><div onclick="selectSize(this)">XL</div>`;
+  } else if (type === "kids") {
+    sizesHTML = `<div onclick="selectSize(this)">36</div><div onclick="selectSize(this)">37</div><div onclick="selectSize(this)">38</div><div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div>`;
+  } else {
+    sizesHTML = `<div onclick="selectSize(this)">39</div><div onclick="selectSize(this)">40</div><div onclick="selectSize(this)">41</div><div onclick="selectSize(this)">42</div><div onclick="selectSize(this)">43</div>`;
+  }
+  document.getElementById('sizesContainer').innerHTML = sizesHTML;
 }
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('productModal');
-    if (!modal) return;
+function closeModal() {
+  document.getElementById('productModal').style.display = 'none';
+}
 
-    let startY = 0;
-    let endY = 0;
-    let startX = 0;
-    let endX = 0;
+function selectSize(element) {
+  document.querySelectorAll('.sizes div').forEach(size => { size.classList.remove('active'); });
+  element.classList.add('active');
+  selectedSize = element.innerText;
+}
 
-    modal.addEventListener('touchstart', function(e){
-        startY = e.touches[0].clientY;
-        startX = e.touches[0].clientX;
-    });
+function buyWhatsApp() {
+  if (selectedSize === "") {
+    alert("Selecciona una talla");
+    return;
+  }
+  let message = `Hola, quiero comprar:\n🏀 Producto: ${currentProduct.title}\n📏 Talla: ${selectedSize}\n💰 Precio: ${currentProduct.price}`;
+  let phone = "51970004135";
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
 
-    modal.addEventListener('touchmove', function(e){
-        endY = e.touches[0].clientY;
-        endX = e.touches[0].clientX;
-    });
-
-    modal.addEventListener('touchend', function(){
-        const vertical = endY - startY;
-        const horizontal = endX - startX;
-
-        if (vertical > 100 || horizontal > 100) {
-            closeModal();
-        }
-    });
-});
+window.onclick = function(event) {
+  const modal = document.getElementById('productModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
 </script>
 
 </body>
-</html>
-</script>
-
-</body>
-
 </html>
